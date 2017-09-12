@@ -1,7 +1,10 @@
 package com.lucasurbas.masterdetail.ui.people;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +14,6 @@ import android.widget.TextView;
 
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.data.Person;
-import com.lucasurbas.masterdetail.ui.widget.FlipAnimator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,8 +27,7 @@ import butterknife.Unbinder;
 public class PersonView extends FrameLayout {
 
     @BindView(R.id.item_view_user__row) View row;
-    @BindView(R.id.item_view_user__avatar_front) ImageView frontDrawable;
-    @BindView(R.id.item_view_user__avatar_back) ImageView backDrawable;
+    @BindView(R.id.item_view_user__avatar) ImageView avatar;
     @BindView(R.id.item_view_user__name) TextView name;
     @BindView(R.id.item_view_user__description) TextView description;
     @BindView(R.id.item_view_user__action) View star;
@@ -34,6 +35,7 @@ public class PersonView extends FrameLayout {
     private Person person;
     private PersonView.OnPersonClickListener onPersonClickListener;
     private Unbinder mUnbinder;
+    private boolean isSelected;
 
     public interface OnPersonClickListener {
 
@@ -57,6 +59,7 @@ public class PersonView extends FrameLayout {
     private void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.item_view_user_internal, this, true);
         mUnbinder = ButterKnife.bind(this);
+        isSelected = false;
     }
 
     public void setUser(Person person) {
@@ -84,28 +87,29 @@ public class PersonView extends FrameLayout {
         }
     }
 
-    @OnClick(R.id.item_view_user__avatar_front)
-    public void onDrawableClickActionFront(View view) {
-        if (onPersonClickListener != null) {
-            frontDrawable.setVisibility(View.GONE);
-            resetIconYAxis(view);
-            backDrawable.setVisibility(View.VISIBLE);
-            backDrawable.setAlpha(1f);
-            FlipAnimator.flipView(getContext(), backDrawable, frontDrawable, true);
-            onPersonClickListener.onDrawableClick(person);
+    @OnClick(R.id.item_view_user__avatar)
+    public void onDrawableClickActionFront(final View view) {
+        final AppCompatImageView imageView = (AppCompatImageView) view;
+        if (isSelected) {
+            ObjectAnimator.ofFloat(view, "rotationY", 360f, 180f).setDuration(800).start();
+        } else {
+            ObjectAnimator.ofFloat(view, "rotationY", 180f, 360f).setDuration(800).start();
         }
-    }
 
-    @OnClick(R.id.item_view_user__avatar_back)
-    public void onDrawableClickActionBack(View view) {
-        if (onPersonClickListener != null) {
-            backDrawable.setVisibility(View.GONE);
-            resetIconYAxis(view);
-            frontDrawable.setVisibility(View.VISIBLE);
-            frontDrawable.setAlpha(1f);
-            FlipAnimator.flipView(getContext(), backDrawable, frontDrawable, false);
-            onPersonClickListener.onDrawableClick(person);
-        }
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (isSelected) {
+                    imageView.setImageDrawable(getContext().getDrawable(R.drawable.list_drawable_front));
+                    isSelected = false;
+                } else {
+                    imageView.setImageDrawable(getContext().getDrawable(R.drawable.list_drawable_back));
+                    isSelected = true;
+                }
+            }
+        }, 400);
+        onPersonClickListener.onDrawableClick(person);
     }
 
     public void removeOnPersonClickListener() {
@@ -114,11 +118,5 @@ public class PersonView extends FrameLayout {
 
     public void unBind() {
         mUnbinder.unbind();
-    }
-
-    private void resetIconYAxis(View view) {
-        if (view.getRotationY() != 0) {
-            view.setRotationY(0);
-        }
     }
 }

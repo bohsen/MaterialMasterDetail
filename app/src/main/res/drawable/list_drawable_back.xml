@@ -8,5 +8,5 @@
             <solid android:color="@color/black_transparent_12p"/>
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_done_white_24dp" />
+    <item android:drawable="@drawable/ic_done_black_24dp" />
 </layer-list>
