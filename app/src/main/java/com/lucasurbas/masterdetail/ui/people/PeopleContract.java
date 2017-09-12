@@ -27,6 +27,8 @@ public interface PeopleContract {
         void showPeopleList(List<Person> peopleList);
 
         void showToast(String message);
+
+        void onDrawableActionClick(Person person);
     }
 
     interface Presenter extends BasePresenter<PeopleContract.View> {
@@ -38,5 +40,7 @@ public interface PeopleContract {
         void clickPersonAction(Person person);
 
         void loadMorePeople();
+
+        void clickDrawable(Person person);
     }
 }

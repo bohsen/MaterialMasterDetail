@@ -76,6 +76,9 @@ public class PeopleFragment extends Fragment implements PeopleContract.View {
         adapter = new PeopleAdapter();
         adapter.setOnPersonClickListener(new PersonView.OnPersonClickListener() {
             @Override
+            public void onDrawableClick(Person person) { presenter.clickDrawable(person); }
+
+            @Override
             public void onPersonClick(Person person) {
                 presenter.clickPerson(person);
             }
@@ -141,5 +144,10 @@ public class PeopleFragment extends Fragment implements PeopleContract.View {
     @Override
     public void showToast(String message) {
         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDrawableActionClick(Person person) {
+//        adapter.
     }
 }

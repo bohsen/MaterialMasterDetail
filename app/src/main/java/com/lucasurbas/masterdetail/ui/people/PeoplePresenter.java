@@ -110,4 +110,10 @@ public class PeoplePresenter implements PeopleContract.Presenter {
             }
         }, 2000);
     }
+
+    @Override
+    public void clickDrawable(Person person) {
+        view.showToast("DrawableAction clicked: " + person.getName());
+        view.onDrawableActionClick(person);
+    }
 }

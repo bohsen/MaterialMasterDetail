@@ -2,7 +2,9 @@ package com.lucasurbas.masterdetail.ui.people;
 
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.lucasurbas.masterdetail.R;
@@ -19,6 +21,12 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
 
     private List<Person> peopleList;
     private PersonView.OnPersonClickListener onPersonClickListener;
+
+    private SparseBooleanArray selectedItems;
+
+    // array used to perform multiple animation at once
+    private SparseBooleanArray animationItemsIndex;
+    private boolean reverseAllAnimations = false;
 
 
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
@@ -48,18 +56,32 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
     @Override
     public void onBindViewHolder(PersonViewHolder holder, int position) {
         holder.personView.setUser(peopleList.get(position));
-        holder.personView.setonPersonClickListener(onPersonClickListener);
+        holder.personView.setOnPersonClickListener(onPersonClickListener);
     }
 
-    public void setPeopleList(List<Person> peopleList) {
+    void setPeopleList(List<Person> peopleList) {
         DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new PeopleListDiffCallback(this.peopleList, peopleList));
         this.peopleList.clear();
         this.peopleList.addAll(peopleList);
         diffResult.dispatchUpdatesTo(this);
     }
 
+
     @Override
     public int getItemCount() {
         return peopleList.size();
+    }
+
+    // As the views will be reused, sometimes the icon appears as
+    // flipped because older view is reused. Reset the Y-axis to 0
+    private void resetIconYAxis(View view) {
+        if (view.getRotationY() != 0) {
+            view.setRotationY(0);
+        }
+    }
+
+    public void resetAnimationIndex() {
+        reverseAllAnimations = false;
+        animationItemsIndex.clear();
     }
 }
