@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
  * Created by Lucas on 04/01/2017.
  */
 
-public class PeopleFragment extends Fragment implements PeopleContract.View {
+public class PeopleFragment extends Fragment implements PeopleContract.View, PersonView.OnPersonClickListener {
 
     @BindView(R.id.fragment_people__swipe_refresh) SwipeRefreshLayout swipeRefresh;
     @BindView(R.id.fragment_people__recycler_view) RecyclerView recyclerView;
@@ -74,20 +74,7 @@ public class PeopleFragment extends Fragment implements PeopleContract.View {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         adapter = new PeopleAdapter();
-        adapter.setOnPersonClickListener(new PersonView.OnPersonClickListener() {
-            @Override
-            public void onDrawableClick(Person person) { presenter.clickDrawable(person); }
-
-            @Override
-            public void onPersonClick(Person person) {
-                presenter.clickPerson(person);
-            }
-
-            @Override
-            public void onPersonActionClick(Person person) {
-                presenter.clickPersonAction(person);
-            }
-        });
+        adapter.setOnPersonClickListener(this);
         recyclerView.setAdapter(adapter);
     }
 
@@ -126,6 +113,12 @@ public class PeopleFragment extends Fragment implements PeopleContract.View {
     }
 
     @Override
+    public void onDestroy() {
+        super.onDestroy();
+        adapter.setOnPersonClickListener(null);
+    }
+
+    @Override
     public void showLoading() {
         swipeRefresh.setRefreshing(true);
     }
@@ -147,7 +140,22 @@ public class PeopleFragment extends Fragment implements PeopleContract.View {
     }
 
     @Override
-    public void onDrawableActionClick(Person person) {
-//        adapter.
+    public void onPersonClick(Person person) {
+        presenter.loadPersonDetails(person);
+    }
+
+    @Override
+    public void onPersonActionClick(Person person) {
+        presenter.clickPersonAction(person);
+    }
+
+    @Override
+    public void onPersonSelected(Person person) {
+        presenter.select(person);
+    }
+
+    @Override
+    public void onPersonUnselected(Person person) {
+        presenter.unselect(person);
     }
 }

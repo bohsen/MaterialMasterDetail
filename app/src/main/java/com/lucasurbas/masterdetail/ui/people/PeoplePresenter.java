@@ -84,7 +84,7 @@ public class PeoplePresenter implements PeopleContract.Presenter {
     }
 
     @Override
-    public void clickPerson(Person person) {
+    public void loadPersonDetails(Person person) {
         navigator.goToPersonDetails(person);
     }
 
@@ -112,8 +112,14 @@ public class PeoplePresenter implements PeopleContract.Presenter {
     }
 
     @Override
-    public void clickDrawable(Person person) {
-        view.showToast("DrawableAction clicked: " + person.getName());
-        view.onDrawableActionClick(person);
+    public void select(Person person) {
+        view.showToast("DrawableAction selected: " + person.getName());
+        // TODO: Add person from list of actionmodeitems
+    }
+
+    @Override
+    public void unselect(Person person) {
+        view.showToast("DrawableAction unselected: " + person.getName());
+        // TODO: Remove person from list of actionmodeitems
     }
 }

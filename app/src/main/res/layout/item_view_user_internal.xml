@@ -18,11 +18,11 @@
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/item_view_user__avatar"
-            app:srcCompat="@drawable/list_drawable_front"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_width="40dp"
-            android:layout_height="40dp"/>
+            android:layout_height="40dp"
+            android:background="@drawable/ic_drawable_front"/>
 
     </RelativeLayout>
 

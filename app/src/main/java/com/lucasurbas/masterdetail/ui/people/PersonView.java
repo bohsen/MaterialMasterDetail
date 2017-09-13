@@ -1,8 +1,9 @@
 package com.lucasurbas.masterdetail.ui.people;
 
-import android.animation.ObjectAnimator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.content.Context;
-import android.os.Handler;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
@@ -35,15 +36,14 @@ public class PersonView extends FrameLayout {
     private Person person;
     private PersonView.OnPersonClickListener onPersonClickListener;
     private Unbinder mUnbinder;
-    private boolean isSelected;
+    private boolean isSelected = false;
 
     public interface OnPersonClickListener {
 
-        void onDrawableClick(Person person);
-
         void onPersonClick(Person person);
-
         void onPersonActionClick(Person person);
+        void onPersonSelected(Person person);
+        void onPersonUnselected(Person person);
     }
 
     public PersonView(Context context) {
@@ -89,27 +89,32 @@ public class PersonView extends FrameLayout {
 
     @OnClick(R.id.item_view_user__avatar)
     public void onDrawableClickActionFront(final View view) {
-        final AppCompatImageView imageView = (AppCompatImageView) view;
-        if (isSelected) {
-            ObjectAnimator.ofFloat(view, "rotationY", 360f, 180f).setDuration(800).start();
-        } else {
-            ObjectAnimator.ofFloat(view, "rotationY", 180f, 360f).setDuration(800).start();
-        }
 
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (isSelected) {
-                    imageView.setImageDrawable(getContext().getDrawable(R.drawable.list_drawable_front));
-                    isSelected = false;
-                } else {
-                    imageView.setImageDrawable(getContext().getDrawable(R.drawable.list_drawable_back));
-                    isSelected = true;
-                }
-            }
-        }, 400);
-        onPersonClickListener.onDrawableClick(person);
+        final AppCompatImageView imageView = (AppCompatImageView) view;
+
+        if (isSelected) {
+            imageView.setBackgroundResource(R.drawable.ic_circle_spin_out);
+            AnimationDrawable slideShowAnimation = (AnimationDrawable) imageView.getBackground();
+            AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(
+                    getContext(),
+                    R.animator.card_flip_right_out);
+            set.setTarget(imageView);
+            set.start();
+            slideShowAnimation.start();
+            onPersonClickListener.onPersonUnselected(person);
+            isSelected = false;
+        } else {
+            imageView.setBackgroundResource(R.drawable.ic_circle_spin_in);
+            AnimationDrawable slideShowAnimation = (AnimationDrawable) imageView.getBackground();
+            AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(
+                    getContext(),
+                    R.animator.card_flip_left_in);
+            set.setTarget(imageView);
+            set.start();
+            slideShowAnimation.start();
+            onPersonClickListener.onPersonSelected(person);
+            isSelected = true;
+        }
     }
 
     public void removeOnPersonClickListener() {
