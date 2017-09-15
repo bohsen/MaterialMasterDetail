@@ -29,5 +29,6 @@
 
     <string name="menu_person_details__share">Share</string>
     <string name="menu_person_details__favorite">Favorite</string>
+    <string name="action_item_clicked">Action item clicked</string>
 
 </resources>

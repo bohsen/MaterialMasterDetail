@@ -27,6 +27,14 @@ public interface PeopleContract {
         void showPeopleList(List<Person> peopleList);
 
         void showToast(String message);
+
+        void startActionMode();
+
+        void stopActionMode();
+
+        void updateActionModeCount(int count);
+
+        void clearSelected();
     }
 
     interface Presenter extends BasePresenter<PeopleContract.View> {
@@ -42,5 +50,7 @@ public interface PeopleContract {
         void select(Person person);
 
         void unselect(Person person);
+
+        void clearSelected();
     }
 }

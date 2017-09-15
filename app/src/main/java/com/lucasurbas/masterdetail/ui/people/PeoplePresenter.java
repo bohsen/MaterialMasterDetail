@@ -2,6 +2,7 @@ package com.lucasurbas.masterdetail.ui.people;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.SparseBooleanArray;
 
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.data.Person;
@@ -24,6 +25,9 @@ public class PeoplePresenter implements PeopleContract.Presenter {
     private PeopleContract.Navigator navigator;
 
     private List<Person> peopleList;
+    private List<Person> selectedPeopleList = new ArrayList<>();
+    private final SparseBooleanArray selectedItems = new SparseBooleanArray();
+
     private List<String> names;
 
     @Inject
@@ -114,12 +118,31 @@ public class PeoplePresenter implements PeopleContract.Presenter {
     @Override
     public void select(Person person) {
         view.showToast("DrawableAction selected: " + person.getName());
-        // TODO: Add person from list of actionmodeitems
+        if(selectedPeopleList.size() == 0) {
+            view.startActionMode();
+        }
+        selectedPeopleList.add(person);
+        selectedItems.put(peopleList.indexOf(person), true);
+        view.updateActionModeCount(selectedPeopleList.size());
     }
 
     @Override
     public void unselect(Person person) {
         view.showToast("DrawableAction unselected: " + person.getName());
-        // TODO: Remove person from list of actionmodeitems
+        selectedPeopleList.remove(person);
+        if (selectedItems.get(peopleList.indexOf(person), false)) {
+            selectedItems.delete(peopleList.indexOf(person));
+        }
+        if(selectedPeopleList.size() == 0) {
+            view.stopActionMode();
+        } else {
+            view.updateActionModeCount(selectedPeopleList.size());
+        }
+    }
+
+    @Override
+    public void clearSelected() {
+        selectedPeopleList.clear();
+        view.clearSelected(selectedItems);
     }
 }

@@ -1,12 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.GuidelinesCompat.Light.LightToolbar">
+    <style name="AppTheme" parent="Theme.GuidelinesCompat.Light.DarkToolbar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorBackground</item>
+
+        <!-- Action Mode styles -->
+        <item name="actionModeStyle">@style/AppTheme.ActionModeStyle</item>
+        <!--<item name="actionModeBackground">@color/bg_action_mode</item>-->
     </style>
 
     <style name="AppTheme.ActionBar" parent="AppTheme">
@@ -20,9 +24,8 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- Base toolbar theme. -->
-    <style name="AppTheme.Toolbar" parent="Theme.GuidelinesCompat.LightToolbar">
-
+    <style name="AppTheme.ActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="background">@color/bg_action_mode</item>
     </style>
 
 </resources>

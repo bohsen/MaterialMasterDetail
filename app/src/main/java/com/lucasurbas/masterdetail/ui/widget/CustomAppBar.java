@@ -30,7 +30,8 @@ public class CustomAppBar extends AppBarLayout {
     @Nullable
     @BindView(R.id.view_main_toolbar__toolbar_general)
     Toolbar toolbarGeneral;
-    @BindView(R.id.view_main_toolbar__toolbar_specific) Toolbar toolbarSpecific;
+    @BindView(R.id.view_main_toolbar__toolbar_specific)
+    public Toolbar toolbarSpecific;
     @Nullable
     @BindView(R.id.view_main_toolbar__space_toolbar)
     View space;

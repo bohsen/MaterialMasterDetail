@@ -16,13 +16,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!--<CheckBox-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:id="@+id/text"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:textSize="64sp"-->
+            <!--android:paddingStart="16dp"-->
+            <!--android:button="@drawable/fill_in_heart"-->
+            <!--android:background="@null"/>-->
+
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/item_view_user__avatar"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/ic_drawable_front"/>
+            android:background="@drawable/ic_drawable_front"
+            android:tint="@color/grey"/>
 
     </RelativeLayout>
 
@@ -41,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:textColor="@android:color/black"
+            android:textColor="@color/black"
             app:leading="20sp"/>
 
         <com.actinarium.aligned.TextView

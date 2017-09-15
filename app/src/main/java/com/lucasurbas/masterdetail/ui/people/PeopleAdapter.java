@@ -4,7 +4,6 @@ import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.lucasurbas.masterdetail.R;
@@ -13,20 +12,16 @@ import com.lucasurbas.masterdetail.data.Person;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Lucas on 04/01/2017.
- */
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonViewHolder> {
 
     private List<Person> peopleList;
     private PersonView.OnPersonClickListener onPersonClickListener;
 
-    private SparseBooleanArray selectedItems;
+    public final SparseBooleanArray selectedItems = new SparseBooleanArray();;
 
-    // array used to perform multiple animation at once
-    private SparseBooleanArray animationItemsIndex;
     private boolean reverseAllAnimations = false;
+
 
 
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
@@ -40,7 +35,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
     }
 
     public PeopleAdapter() {
-        this.peopleList = new ArrayList<Person>();
+        this.peopleList = new ArrayList<>();
     }
 
     public void setOnPersonClickListener(PersonView.OnPersonClickListener onPersonClickListener) {
@@ -57,6 +52,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
     public void onBindViewHolder(PersonViewHolder holder, int position) {
         holder.personView.setUser(peopleList.get(position));
         holder.personView.setOnPersonClickListener(onPersonClickListener);
+        holder.personView.isSelected = selectedItems.get(position, false);
     }
 
     void setPeopleList(List<Person> peopleList) {
@@ -66,22 +62,17 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
         diffResult.dispatchUpdatesTo(this);
     }
 
-
     @Override
     public int getItemCount() {
         return peopleList.size();
     }
 
-    // As the views will be reused, sometimes the icon appears as
-    // flipped because older view is reused. Reset the Y-axis to 0
-    private void resetIconYAxis(View view) {
-        if (view.getRotationY() != 0) {
-            view.setRotationY(0);
-        }
+    void clearSelection() {
+        selectedItems.clear();
+        notifyDataSetChanged();
     }
 
-    public void resetAnimationIndex() {
-        reverseAllAnimations = false;
-        animationItemsIndex.clear();
+    public void unselectPerson(Person person) {
+        selectedItems.
     }
 }

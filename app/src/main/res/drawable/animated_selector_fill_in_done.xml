@@ -1,0 +1,38 @@
+<animated-selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- provide a different drawable for each state-->
+    <item android:id="@+id/state_on"
+        android:drawable="@drawable/ic_animated_done_grey_24dp"
+        android:state_checked="true"/>
+    <item android:id="@+id/state_off"
+        android:drawable="@drawable/ic_done_white_24dp"/>
+
+    <!-- specify transitions -->
+    <transition
+        android:fromId="@+id/state_off"
+        android:toId="@+id/state_on">
+        <animated-vector
+            android:drawable="@drawable/ic_animated_done_grey_24dp">
+            <target
+                android:name="done_group"
+                android:animation="@animator/appear" />
+            <target
+                android:name="done"
+                android:animation="@animator/white_to_grey" />
+        </animated-vector>
+    </transition>
+    <transition
+        android:fromId="@+id/state_on"
+        android:toId="@+id/state_off"
+        android:drawable="@drawable/ic_animated_done_grey_24dp">
+        <animated-vector
+            android:drawable="@drawable/ic_animated_done_grey_24dp">
+            <target
+                android:name="done_group"
+                android:animation="@animator/disappear" />
+            <target
+                android:name="done"
+                android:animation="@animator/grey_to_white" />
+        </animated-vector>
+    </transition>
+</animated-selector>

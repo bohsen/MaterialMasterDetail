@@ -2,11 +2,19 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <!-- drawable/circle_card_icon.xml -->
-        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+        <shape
             android:shape="oval">
+            <size
+                android:width="40dp"
+                android:height="40dp"/>
 
             <solid android:color="@color/black_transparent_12p"/>
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_done_black_24dp" />
+    <item
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp"
+        android:bottom="8dp"
+        android:drawable="@drawable/ic_done_black_24dp" />
 </layer-list>

@@ -6,7 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -28,14 +34,21 @@ import butterknife.ButterKnife;
  * Created by Lucas on 04/01/2017.
  */
 
-public class PeopleFragment extends Fragment implements PeopleContract.View, PersonView.OnPersonClickListener {
+public class PeopleFragment extends Fragment
+        implements PeopleContract.View, PersonView.OnPersonClickListener, ActionMode.Callback {
 
     @BindView(R.id.fragment_people__swipe_refresh) SwipeRefreshLayout swipeRefresh;
     @BindView(R.id.fragment_people__recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.toolbar_top)
+    Toolbar toolbar;
 
     @Inject PeopleContract.Presenter presenter;
 
     private PeopleAdapter adapter;
+
+    private ActionMode mActionMode;
+    private CustomAppBar appBar;
+
 
     public static PeopleFragment newInstance() {
         PeopleFragment fragment = new PeopleFragment();
@@ -79,7 +92,7 @@ public class PeopleFragment extends Fragment implements PeopleContract.View, Per
     }
 
     private void setupToolbar() {
-        CustomAppBar appBar = ((MainActivity) getActivity()).getCustomAppBar();
+        appBar = ((MainActivity) getActivity()).getCustomAppBar();
         appBar.setTitle(getString(R.string.fragment_people__title));
         appBar.setMenuRes(R.menu.people_general, R.menu.people_specific, R.menu.people_merged);
     }
@@ -152,10 +165,79 @@ public class PeopleFragment extends Fragment implements PeopleContract.View, Per
     @Override
     public void onPersonSelected(Person person) {
         presenter.select(person);
+        adapter.selectedItems.put();
     }
 
     @Override
     public void onPersonUnselected(Person person) {
         presenter.unselect(person);
+        adapter.unselectPerson(person);
+    }
+
+    // Called when the action mode is created; startActionMode() was called
+    @Override
+    public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+        // Inflate a menu resource providing context menu items
+        MenuInflater inflater = mode.getMenuInflater();
+        inflater.inflate(R.menu.favorites_specific, menu);
+        mActionMode = mode;
+
+        swipeRefresh.setEnabled(false);
+        return true;
+    }
+
+    // Called each time the action mode is shown. Always called after onCreateActionMode, but
+    // may be called multiple times if the mode is invalidated.
+    @Override
+    public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+        return false; // Return false if nothing is done
+    }
+
+    // Called when the user selects a contextual menu item
+    @Override
+    public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_favorites__heart:
+                showToast(getString(R.string.action_item_clicked));
+                mode.finish(); // Action picked, so close the CAB
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    // Called when the user exits the action mode
+    @Override
+    public void onDestroyActionMode(ActionMode mode) {
+        Log.d("PeopleFragment", "onDestroyActionMode called");
+        presenter.clearSelected();
+        swipeRefresh.setEnabled(true);
+        mActionMode = null;
+
+    }
+
+    @Override
+    public void startActionMode() {
+        toolbar.startActionMode(this);
+    }
+
+    @Override
+    public void stopActionMode() {
+        if (mActionMode != null) {
+            mActionMode.finish();
+        }
+    }
+
+    @Override
+    public void updateActionModeCount(int count) {
+        if (mActionMode != null) {
+            mActionMode.setTitle(String.valueOf(count));
+            mActionMode.invalidate();
+        }
+    }
+
+    @Override
+    public void clearSelected() {
+        adapter.clearSelection();
     }
 }
