@@ -2,6 +2,7 @@ package com.lucasurbas.masterdetail.ui.people;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 
 import com.lucasurbas.masterdetail.R;
@@ -26,7 +27,7 @@ public class PeoplePresenter implements PeopleContract.Presenter {
 
     private List<Person> peopleList;
     private List<Person> selectedPeopleList = new ArrayList<>();
-    private final SparseBooleanArray selectedItems = new SparseBooleanArray();
+    public final SparseBooleanArray selectedItems = new SparseBooleanArray();
 
     private List<String> names;
 
@@ -117,7 +118,8 @@ public class PeoplePresenter implements PeopleContract.Presenter {
 
     @Override
     public void select(Person person) {
-        view.showToast("DrawableAction selected: " + person.getName());
+        view.showToast("DrawableAction selected: " + person.getName() +
+                " at index: " + peopleList.indexOf(person));
         if(selectedPeopleList.size() == 0) {
             view.startActionMode();
         }
@@ -128,11 +130,10 @@ public class PeoplePresenter implements PeopleContract.Presenter {
 
     @Override
     public void unselect(Person person) {
-        view.showToast("DrawableAction unselected: " + person.getName());
+        view.showToast("DrawableAction unselected: " + person.getName() +
+                " at index: " + peopleList.indexOf(person));
         selectedPeopleList.remove(person);
-        if (selectedItems.get(peopleList.indexOf(person), false)) {
-            selectedItems.delete(peopleList.indexOf(person));
-        }
+        selectedItems.delete(peopleList.indexOf(person));
         if(selectedPeopleList.size() == 0) {
             view.stopActionMode();
         } else {
@@ -142,7 +143,11 @@ public class PeoplePresenter implements PeopleContract.Presenter {
 
     @Override
     public void clearSelected() {
+        Log.d("PeoplePresenter", "#clearSelected called...");
+        if (selectedPeopleList.size() > 0) {
+            view.reverseAllAnimations(selectedItems);
+        }
         selectedPeopleList.clear();
-        view.clearSelected(selectedItems);
+        selectedItems.clear();
     }
 }

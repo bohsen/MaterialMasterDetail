@@ -17,6 +17,27 @@ public class Person implements Parcelable{
         this.id = id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        if (!id.equals(person.id)) return false;
+        if (!name.equals(person.name)) return false;
+        return description.equals(person.description);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + description.hashCode();
+        return result;
+    }
+
     protected Person(Parcel in) {
         id = in.readString();
         name = in.readString();
@@ -49,22 +70,6 @@ public class Person implements Parcelable{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Person person = (Person) o;
-
-        return id != null ? id.equals(person.id) : person.id == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
     }
 
     public String getId() {

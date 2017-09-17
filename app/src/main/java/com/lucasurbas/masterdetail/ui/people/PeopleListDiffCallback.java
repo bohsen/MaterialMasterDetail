@@ -15,7 +15,7 @@ public class PeopleListDiffCallback extends DiffUtil.Callback {
     private List<Person> oldList;
     private List<Person> newList;
 
-    public PeopleListDiffCallback(List<Person> oldList, List<Person> newList) {
+    PeopleListDiffCallback(List<Person> oldList, List<Person> newList) {
         this.oldList = oldList;
         this.newList = newList;
     }

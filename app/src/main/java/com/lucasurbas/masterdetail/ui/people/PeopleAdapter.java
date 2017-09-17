@@ -2,7 +2,6 @@ package com.lucasurbas.masterdetail.ui.people;
 
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -15,14 +14,8 @@ import java.util.List;
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonViewHolder> {
 
-    private List<Person> peopleList;
-    private PersonView.OnPersonClickListener onPersonClickListener;
-
-    public final SparseBooleanArray selectedItems = new SparseBooleanArray();;
-
-    private boolean reverseAllAnimations = false;
-
-
+    private List<Person> mPeopleList;
+    private PersonView.OnPersonClickListener mOnPersonClickListener;
 
     public static class PersonViewHolder extends RecyclerView.ViewHolder {
 
@@ -35,11 +28,11 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
     }
 
     public PeopleAdapter() {
-        this.peopleList = new ArrayList<>();
+        this.mPeopleList = new ArrayList<>();
     }
 
     public void setOnPersonClickListener(PersonView.OnPersonClickListener onPersonClickListener) {
-        this.onPersonClickListener = onPersonClickListener;
+        this.mOnPersonClickListener = onPersonClickListener;
     }
 
     @Override
@@ -50,29 +43,20 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonView
 
     @Override
     public void onBindViewHolder(PersonViewHolder holder, int position) {
-        holder.personView.setUser(peopleList.get(position));
-        holder.personView.setOnPersonClickListener(onPersonClickListener);
-        holder.personView.isSelected = selectedItems.get(position, false);
-    }
-
-    void setPeopleList(List<Person> peopleList) {
-        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new PeopleListDiffCallback(this.peopleList, peopleList));
-        this.peopleList.clear();
-        this.peopleList.addAll(peopleList);
-        diffResult.dispatchUpdatesTo(this);
+        holder.personView.setUser(mPeopleList.get(position));
+        holder.personView.setOnPersonClickListener(mOnPersonClickListener);
     }
 
     @Override
     public int getItemCount() {
-        return peopleList.size();
+        return mPeopleList.size();
     }
 
-    void clearSelection() {
-        selectedItems.clear();
-        notifyDataSetChanged();
+    void setPeopleList(List<Person> peopleList) {
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(new PeopleListDiffCallback(this.mPeopleList, peopleList));
+        this.mPeopleList.clear();
+        this.mPeopleList.addAll(peopleList);
+        diffResult.dispatchUpdatesTo(this);
     }
 
-    public void unselectPerson(Person person) {
-        selectedItems.
-    }
 }

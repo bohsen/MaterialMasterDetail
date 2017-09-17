@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -48,7 +49,6 @@ public class PeopleFragment extends Fragment
 
     private ActionMode mActionMode;
     private CustomAppBar appBar;
-
 
     public static PeopleFragment newInstance() {
         PeopleFragment fragment = new PeopleFragment();
@@ -162,18 +162,6 @@ public class PeopleFragment extends Fragment
         presenter.clickPersonAction(person);
     }
 
-    @Override
-    public void onPersonSelected(Person person) {
-        presenter.select(person);
-        adapter.selectedItems.put();
-    }
-
-    @Override
-    public void onPersonUnselected(Person person) {
-        presenter.unselect(person);
-        adapter.unselectPerson(person);
-    }
-
     // Called when the action mode is created; startActionMode() was called
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
@@ -213,7 +201,6 @@ public class PeopleFragment extends Fragment
         presenter.clearSelected();
         swipeRefresh.setEnabled(true);
         mActionMode = null;
-
     }
 
     @Override
@@ -223,6 +210,7 @@ public class PeopleFragment extends Fragment
 
     @Override
     public void stopActionMode() {
+        Log.d("PeopleFragment", "stopActionMode called");
         if (mActionMode != null) {
             mActionMode.finish();
         }
@@ -237,7 +225,27 @@ public class PeopleFragment extends Fragment
     }
 
     @Override
-    public void clearSelected() {
-        adapter.clearSelection();
+    public void onPersonSelected(Person person) {
+        presenter.select(person);
+    }
+
+    @Override
+    public void onPersonUnselected(Person person) {
+        presenter.unselect(person);
+    }
+
+    @Override
+    public void reverseAllAnimations(SparseBooleanArray selectedItems) {
+        final int checkedItemCount = selectedItems.size();
+        for (int i = 0; i < checkedItemCount; i++) {
+            int key = selectedItems.keyAt(i);
+            if (selectedItems.get(key, false)) {
+                PersonView view = (PersonView) recyclerView.getLayoutManager()
+                        .findViewByPosition(key);
+                if (view != null) {
+                    view.clearSelection();
+                }
+            }
+        }
     }
 }

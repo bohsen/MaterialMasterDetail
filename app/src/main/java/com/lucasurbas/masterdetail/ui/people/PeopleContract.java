@@ -1,5 +1,7 @@
 package com.lucasurbas.masterdetail.ui.people;
 
+import android.util.SparseBooleanArray;
+
 import com.lucasurbas.masterdetail.data.Person;
 import com.lucasurbas.masterdetail.ui.util.BaseNavigator;
 import com.lucasurbas.masterdetail.ui.util.BasePresenter;
@@ -34,7 +36,7 @@ public interface PeopleContract {
 
         void updateActionModeCount(int count);
 
-        void clearSelected();
+        void reverseAllAnimations(SparseBooleanArray selectedItems);
     }
 
     interface Presenter extends BasePresenter<PeopleContract.View> {

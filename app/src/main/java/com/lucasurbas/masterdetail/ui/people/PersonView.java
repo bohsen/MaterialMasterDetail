@@ -32,9 +32,9 @@ public class PersonView extends FrameLayout {
 
     private Person person;
     private PersonView.OnPersonClickListener onPersonClickListener;
-    public boolean isSelected = false;
+    public boolean isSelected;
 
-    public interface OnPersonClickListener {
+    interface OnPersonClickListener {
 
         void onPersonClick(Person person);
         void onPersonActionClick(Person person);
@@ -71,6 +71,7 @@ public class PersonView extends FrameLayout {
 
     @OnClick(R.id.item_view_user__row)
     public void onRowClickAction() {
+
         if (onPersonClickListener != null) {
             onPersonClickListener.onPersonClick(person);
         }
@@ -84,7 +85,7 @@ public class PersonView extends FrameLayout {
     }
 
     @OnClick(R.id.item_view_user__avatar)
-    public void onDrawableClickActionFront(final View view) {
+    public void onDrawableClickAction(final View view) {
 
         final AppCompatImageView imageView = (AppCompatImageView) view;
 
