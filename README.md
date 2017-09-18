@@ -1,5 +1,5 @@
 # Material Master/Detail
-Fork of Lucas Lurbas' beutiful [MaterialMasterDetail](https://github.com/lurbas/MaterialMasterDetail) project now with ActionMode available, when clicking an avatar icon.
+Fork of Lucas Lurbas' beautiful [MaterialMasterDetail](https://github.com/lurbas/MaterialMasterDetail) project now with ActionMode available, when clicking an avatar icon.
 
 ### Screenshots
 
@@ -9,7 +9,7 @@ Fork of Lucas Lurbas' beutiful [MaterialMasterDetail](https://github.com/lurbas/
 
 ### License
 
-    Copyright 2017 Lucas Urbas
+    Copyright 2017 Thomas Bohsen Schmidt
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
