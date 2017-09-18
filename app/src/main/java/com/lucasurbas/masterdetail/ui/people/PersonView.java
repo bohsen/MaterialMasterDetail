@@ -91,10 +91,12 @@ public class PersonView extends FrameLayout {
 
         if (isSelected) {
             FlipAnimator.flipOut(getContext(), imageView);
+            row.setBackgroundResource(0);
             onPersonClickListener.onPersonUnselected(person);
             isSelected = false;
         } else {
             FlipAnimator.flipIn(getContext(), imageView);
+            row.setBackgroundResource(R.drawable.selector_fragment_people);
             onPersonClickListener.onPersonSelected(person);
             isSelected = true;
         }
@@ -102,6 +104,7 @@ public class PersonView extends FrameLayout {
 
     protected void clearSelection() {
         FlipAnimator.flipOut(getContext(), imageView);
+        row.setBackgroundResource(0);
         isSelected = false;
     }
 }
