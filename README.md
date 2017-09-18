@@ -1,15 +1,5 @@
 # Material Master/Detail
-[![Build Status](https://travis-ci.org/lurbas/MaterialMasterDetail.svg?branch=master)](https://travis-ci.org/lurbas/MaterialMasterDetail) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Master%2FDetail-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/5101) [![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23241-brightgreen.svg)](http://androidweekly.net/issues/issue-241)
-
-Android Application sample of how to implement Master/Detail pattern that follows Material Design visual language.
-
-It is a part of an article called "Case Study. Master/Detail Pattern" published on my personal blog. I highly recommend reading it to gain more context and purpose of this app. 
-
-Just follow [this link](http://goo.gl/ex8MVd).
-
-You can also try it by downloading a demo from [Play Store](https://play.google.com/store/apps/details?id=com.lucasurbas.masterdetail).
-
-Be sure to check this sample on Mobile as well as on Tablet!
+Fork of Lucas Lurbas' beutiful [MaterialMasterDetail](https://github.com/lurbas/MaterialMasterDetail) project now with ActionMode available, when clicking an avatar icon.
 
 ### Screenshots
 
