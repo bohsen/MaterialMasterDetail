@@ -90,7 +90,9 @@ public class PeoplePresenter implements PeopleContract.Presenter {
 
     @Override
     public void loadPersonDetails(Person person) {
-        navigator.goToPersonDetails(person);
+        if (selectedPeopleList.size() == 0) {
+            navigator.goToPersonDetails(person);
+        }
     }
 
     @Override
