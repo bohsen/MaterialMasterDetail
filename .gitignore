@@ -1,6 +1,9 @@
-*.iml
 .gradle
 /local.properties
+
+# Android Studio
+*.iml
+.idea
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
