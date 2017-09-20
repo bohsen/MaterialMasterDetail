@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
@@ -40,8 +39,8 @@ public class PeopleFragment extends Fragment
 
     @BindView(R.id.fragment_people__swipe_refresh) SwipeRefreshLayout swipeRefresh;
     @BindView(R.id.fragment_people__recycler_view) RecyclerView recyclerView;
-    @BindView(R.id.toolbar_top)
-    Toolbar toolbar;
+//    @BindView(R.id.toolbar_top)
+//    Toolbar toolbar;
 
     @Inject PeopleContract.Presenter presenter;
 
@@ -205,7 +204,7 @@ public class PeopleFragment extends Fragment
 
     @Override
     public void startActionMode() {
-        toolbar.startActionMode(this);
+        recyclerView.startActionMode(this);
     }
 
     @Override
