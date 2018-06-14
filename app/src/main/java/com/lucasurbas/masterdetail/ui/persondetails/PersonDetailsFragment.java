@@ -75,6 +75,7 @@ public class PersonDetailsFragment extends Fragment {
 
     private void setPerson(Person person) {
         toolbar.setTitle(person.getName());
+        toolbar.setSubtitle(person.getName());
         description.setText(person.getDescription());
     }
 }
