@@ -6,11 +6,11 @@
         android:id="@+id/menu_person_details__favorite"
         android:title="@string/menu_person_details__favorite"
         android:icon="@drawable/ic_favorite_24dp"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/menu_person_details__share"
-        android:title="@string/menu_person_details__share"
-        android:icon="@drawable/ic_share_24dp"
+        android:id="@+id/menu_person_details__print"
+        android:title="@string/menu_person_details__print"
+        android:icon="@drawable/ic_print_24dp"
         app:showAsAction="always"/>
 </menu>

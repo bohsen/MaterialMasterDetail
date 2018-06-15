@@ -6,77 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="192dp"
         app:elevation="0dp"
         android:background="@color/black_transparent_12p">
 
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/CollapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleGravity="right"
+            app:expandedTitleMarginStart="@dimen/shrine_toolbar_offset_start"
+            app:expandedTitleMarginTop="@dimen/shrine_toolbar_offset_top"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            <!--
+            app:contentScrim="?attr/colorPrimary" // Add this to change color of toolbar when scrolling content
+            android:layout_width="match_parent"
+            ndroid:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="top"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            -->
+
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/fragment_person_details__toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin"
             tools:title="@tools:sample/full_names"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <com.actinarium.aligned.TextView
-                android:id="@+id/fragment_person_details__description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="16dp"
-                android:textSize="14sp"
-                app:lastLineDescent="8sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:leading="24sp"
-                tools:layout_editor_absoluteY="0dp"
-                tools:text="@tools:sample/lorem/random" />
-
-            <TextView
-                android:id="@+id/patientid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:textSize="24sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_person_details__description"
-                tools:text="@tools:sample/us_zipcodes" />
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:textSize="24sp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/patientid"
-                tools:text="@tools:sample/full_names" />
-
-            <TextView
-                android:id="@+id/accessionnumber"
-                android:layout_width="wrap_content"
-                android:layout_height="29dp"
-                android:layout_marginTop="8dp"
-                android:textSize="18.0sp"
-                app:layout_constraintTop_toBottomOf="@+id/name"
-                tools:layout_editor_absoluteX="16dp"
-                tools:text="@tools:sample/us_phones" />
-
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v4.widget.NestedScrollView>
+    <include layout="@layout/fragment_person_details_content" />
 </android.support.design.widget.CoordinatorLayout>
 

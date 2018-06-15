@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/fragment_person_details">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/fragment_person_details__description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textSize="14sp"
+            app:lastLineDescent="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:leading="24sp"
+            tools:text="@tools:sample/lorem/random" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/patientid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="24sp"
+            android:text="TESTID"
+            app:layout_constraintStart_toStartOf="@+id/fragment_person_details__description"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_person_details__description"
+            tools:text="@tools:sample/us_zipcodes" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Test Testesen"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/patientid"
+            app:layout_constraintTop_toBottomOf="@+id/patientid"
+            tools:text="@tools:sample/full_names" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/accessionnumber"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
+            android:text="MI.NJA.TESTTEST"
+            android:textSize="18.0sp"
+            app:layout_constraintStart_toStartOf="@+id/name"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:text="@tools:sample/us_phones" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/department"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
+            android:text="Onkologisk"
+            android:textSize="18.0sp"
+            app:layout_constraintStart_toStartOf="@+id/accessionnumber"
+            app:layout_constraintTop_toBottomOf="@+id/accessionnumber"
+            tools:text="@tools:sample/cities" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
+            android:text="59"
+            android:textSize="18.0sp"
+            app:layout_constraintStart_toStartOf="@+id/department"
+            app:layout_constraintTop_toBottomOf="@+id/department"
+            tools:text="@tools:sample/cities" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
+            android:text="170"
+            android:textSize="18.0sp"
+            app:layout_constraintStart_toStartOf="@+id/age"
+            app:layout_constraintTop_toBottomOf="@+id/age"
+            tools:text="@tools:sample/date/day_of_week" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginTop="8dp"
+            android:text="70"
+            android:textSize="18.0sp"
+            app:layout_constraintStart_toStartOf="@+id/height"
+            app:layout_constraintTop_toBottomOf="@+id/height"
+            tools:text="@tools:sample/us_phones" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
