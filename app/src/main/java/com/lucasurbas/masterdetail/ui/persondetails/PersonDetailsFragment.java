@@ -64,12 +64,7 @@ public class PersonDetailsFragment extends Fragment {
 
         if (!((MainActivity) getActivity()).getContainersLayout().hasTwoColumns()) {
             toolbar.setNavigationIcon(R.drawable.ic_back_24dp);
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    getActivity().onBackPressed();
-                }
-            });
+            toolbar.setNavigationOnClickListener(view -> getActivity().onBackPressed());
         }
     }
 

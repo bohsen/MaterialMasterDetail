@@ -52,27 +52,19 @@ public class MainActivity extends BaseActivity implements MainContract.View, Nav
         ButterKnife.bind(this);
 
         if (insetsView != null && navigationSideView != null) {
-            ViewCompat.setOnApplyWindowInsetsListener(insetsView, new OnApplyWindowInsetsListener() {
-                @Override
-                public WindowInsetsCompat onApplyWindowInsets(View v, WindowInsetsCompat insets) {
-                    ((ViewGroup.MarginLayoutParams) insetsView.getLayoutParams()).topMargin = insets.getSystemWindowInsetTop();
-                    ((ViewGroup.MarginLayoutParams) insetsView.getLayoutParams()).bottomMargin = insets.getSystemWindowInsetBottom();
-                    insetsView.requestLayout();
-                    ((ViewGroup.MarginLayoutParams) navigationSideView.getLayoutParams()).topMargin = (-insets.getSystemWindowInsetTop());
-                    navigationSideView.requestLayout();
-                    return insets.consumeSystemWindowInsets();
-                }
+            ViewCompat.setOnApplyWindowInsetsListener(insetsView, (v, insets) -> {
+                ((ViewGroup.MarginLayoutParams) insetsView.getLayoutParams()).topMargin = insets.getSystemWindowInsetTop();
+                ((ViewGroup.MarginLayoutParams) insetsView.getLayoutParams()).bottomMargin = insets.getSystemWindowInsetBottom();
+                insetsView.requestLayout();
+                ((ViewGroup.MarginLayoutParams) navigationSideView.getLayoutParams()).topMargin = (-insets.getSystemWindowInsetTop());
+                navigationSideView.requestLayout();
+                return insets.consumeSystemWindowInsets();
             });
             navigationSideView.setNavigationItemSelectedListener(this);
         }
 
         navigationView.setNavigationItemSelectedListener(this);
-        customAppBar.setOnNavigationClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toggleDrawer();
-            }
-        });
+        customAppBar.setOnNavigationClickListener(v -> toggleDrawer());
 
         presenter.attachView(this);
         if (savedInstanceState == null) {
@@ -99,12 +91,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, Nav
     @Override
     public void closeDrawer() {
         if (drawer != null && drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    drawer.closeDrawer(GravityCompat.START);
-                }
-            }, 100);
+            drawer.postDelayed(() -> drawer.closeDrawer(GravityCompat.START), 100);
         }
     }
 
