@@ -26,5 +26,9 @@
     <dimen name="shrine_spinner_width">212dp</dimen>
     <dimen name="shrine_spinner_height">48dp</dimen>
     <dimen name="shrine_spinner_border_width">2dp</dimen>
+    <dimen name="header_view_start_margin_left">16dp</dimen>
+    <dimen name="header_view_end_margin_left">16dp</dimen>
+    <dimen name="header_view_start_margin_bottom">16dp</dimen>
+    <dimen name="header_view_end_margin_right">16dp</dimen>
 
 </resources>
