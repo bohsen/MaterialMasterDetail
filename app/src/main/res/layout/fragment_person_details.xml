@@ -12,14 +12,14 @@
         app:elevation="0dp"
         android:background="@color/black_transparent_12p">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/CollapsingToolbarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:expandedTitleGravity="right"
-            app:expandedTitleMarginStart="@dimen/shrine_toolbar_offset_start"
-            app:expandedTitleMarginTop="@dimen/shrine_toolbar_offset_top"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+        <!--<android.support.design.widget.CollapsingToolbarLayout-->
+            <!--android:id="@+id/CollapsingToolbarLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:expandedTitleGravity="end"-->
+            <!--app:expandedTitleMarginStart="@dimen/shrine_toolbar_offset_start"-->
+            <!--app:expandedTitleMarginTop="@dimen/shrine_toolbar_offset_top"-->
+            <!--app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">-->
             <!--
             app:contentScrim="?attr/colorPrimary" // Add this to change color of toolbar when scrolling content
             android:layout_width="match_parent"
@@ -30,6 +30,7 @@
             -->
 
 
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/fragment_person_details__toolbar"
             android:layout_width="match_parent"
@@ -37,7 +38,7 @@
             app:layout_collapseMode="pin"
             tools:title="@tools:sample/full_names"/>
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/fragment_person_details_content" />
