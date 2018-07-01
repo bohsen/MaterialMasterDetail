@@ -1,6 +1,7 @@
 package com.lucasurbas.masterdetail.ui.people;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -39,8 +40,6 @@ public class PeopleFragment extends Fragment
 
     @BindView(R.id.fragment_people__swipe_refresh) SwipeRefreshLayout swipeRefresh;
     @BindView(R.id.fragment_people__recycler_view) RecyclerView recyclerView;
-//    @BindView(R.id.toolbar_top)
-//    Toolbar toolbar;
 
     @Inject PeopleContract.Presenter presenter;
 
@@ -58,7 +57,9 @@ public class PeopleFragment extends Fragment
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_people, container, false);
     }
 
@@ -97,12 +98,7 @@ public class PeopleFragment extends Fragment
     }
 
     private void setupSwipeRefresh() {
-        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                presenter.loadMorePeople();
-            }
-        });
+        swipeRefresh.setOnRefreshListener(() -> presenter.loadMorePeople());
     }
 
     private void inject() {
