@@ -1,8 +1,6 @@
 package com.lucasurbas.masterdetail.ui.widget
 
-import android.annotation.TargetApi
 import android.content.Context
-import android.os.Build
 import android.support.constraint.ConstraintLayout
 import android.support.design.widget.AppBarLayout
 import android.support.design.widget.CoordinatorLayout
