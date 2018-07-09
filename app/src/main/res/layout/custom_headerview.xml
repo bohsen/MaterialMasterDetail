@@ -28,11 +28,12 @@
         android:layout_marginTop="8dp"
         android:text="John Smith"
         android:textColor="#ffffff"
-        android:textSize="24sp"
+        android:textSize="36sp"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="32dp"
-        tools:layout_conversion_absoluteWidth="232dp" />
+        tools:layout_conversion_absoluteWidth="232dp"
+        tools:text="John Smith"/>
 
     <TextView
         android:id="@+id/custom_headerview_twitter_user"
@@ -40,11 +41,12 @@
         android:layout_height="wrap_content"
         android:text="\@jsmith"
         android:textColor="#bbbbbb"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_name"
         tools:layout_conversion_absoluteHeight="16dp"
-        tools:layout_conversion_absoluteWidth="232dp" />
+        tools:layout_conversion_absoluteWidth="232dp"
+        tools:text="MI.NJA.0H1234567"/>
 
     <TextView
         android:id="@+id/custom_headerview_description"
@@ -52,11 +54,12 @@
         android:layout_height="wrap_content"
         android:text="Mobile development passionate."
         android:textColor="#ffffff"
-        android:textSize="12sp"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_twitter_user"
         tools:layout_conversion_absoluteHeight="16dp"
-        tools:layout_conversion_absoluteWidth="232dp" />
+        tools:layout_conversion_absoluteWidth="232dp"
+        tools:text="010101-0TT1"/>
 
 
     <TextView
@@ -67,16 +70,17 @@
         android:layout_marginLeft="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:text="1167"
+        android:text="70"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_followers_count"
         app:layout_constraintEnd_toStartOf="@+id/custom_headerview_followers_count"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_conversion_absoluteHeight="27dp"
-        tools:layout_conversion_absoluteWidth="44dp" />
+        tools:layout_conversion_absoluteWidth="44dp"
+        tools:text="70"/>
 
     <TextView
         android:id="@+id/custom_headerview_posts_text"
@@ -84,13 +88,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:text="posts"
+        android:text="kg"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/custom_headerview_posts_count"
         app:layout_constraintStart_toStartOf="@+id/custom_headerview_posts_count"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_posts_count"
@@ -103,25 +106,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="396"
+        android:text="172"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_description" />
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_description"
+        tools:text="170"/>
 
     <TextView
         android:id="@+id/custom_headerview_followers_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="followers"
+        android:text="cm"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/custom_headerview_followers_count"
         app:layout_constraintStart_toStartOf="@+id/custom_headerview_followers_count"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_followers_count" />
@@ -134,23 +137,23 @@
         android:layout_marginLeft="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:text="485"
+        android:text="Onkologisk"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_followers_count"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/custom_headerview_followers_count" />
+        app:layout_constraintStart_toEndOf="@+id/custom_headerview_followers_count"
+        tools:text="Onkologisk"/>
 
     <TextView
         android:id="@+id/custom_headerview_following_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="following"
+        android:text="Afdeling"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:textSize="12sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/custom_headerview_following_count"
         app:layout_constraintStart_toStartOf="@+id/custom_headerview_following_count"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_following_count" />

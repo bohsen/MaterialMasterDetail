@@ -14,29 +14,16 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/fragment_person_details__description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:textSize="14sp"
-            app:lastLineDescent="8sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:leading="24sp"
-            tools:text="@tools:sample/lorem/random" />
-
-        <android.support.v7.widget.AppCompatTextView
             android:id="@+id/patientid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="24sp"
             android:text="TESTID"
-            app:layout_constraintStart_toStartOf="@+id/fragment_person_details__description"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_person_details__description"
-            tools:text="@tools:sample/us_zipcodes" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="010101-0TT1" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/name"
@@ -58,7 +45,7 @@
             android:textSize="18.0sp"
             app:layout_constraintStart_toStartOf="@+id/name"
             app:layout_constraintTop_toBottomOf="@+id/name"
-            tools:text="@tools:sample/us_phones" />
+            tools:text="MI.NJA.TESTTEST" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/department"
@@ -69,7 +56,7 @@
             android:textSize="18.0sp"
             app:layout_constraintStart_toStartOf="@+id/accessionnumber"
             app:layout_constraintTop_toBottomOf="@+id/accessionnumber"
-            tools:text="@tools:sample/cities" />
+            tools:text="Onkologisk Afdeling" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/age"
@@ -80,7 +67,7 @@
             android:textSize="18.0sp"
             app:layout_constraintStart_toStartOf="@+id/department"
             app:layout_constraintTop_toBottomOf="@+id/department"
-            tools:text="@tools:sample/cities" />
+            tools:text="59 år" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/height"
@@ -91,7 +78,7 @@
             android:textSize="18.0sp"
             app:layout_constraintStart_toStartOf="@+id/age"
             app:layout_constraintTop_toBottomOf="@+id/age"
-            tools:text="@tools:sample/date/day_of_week" />
+            tools:text="170 cm" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/weight"
@@ -102,6 +89,19 @@
             android:textSize="18.0sp"
             app:layout_constraintStart_toStartOf="@+id/height"
             app:layout_constraintTop_toBottomOf="@+id/height"
-            tools:text="@tools:sample/us_phones" />
+            tools:text="70 år" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/fragment_person_details__description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:textSize="14sp"
+            app:lastLineDescent="8sp"
+            app:layout_constraintStart_toStartOf="@+id/weight"
+            app:layout_constraintTop_toBottomOf="@+id/weight"
+            app:leading="24sp"
+            tools:text="@tools:sample/lorem/random" />
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.NestedScrollView>
