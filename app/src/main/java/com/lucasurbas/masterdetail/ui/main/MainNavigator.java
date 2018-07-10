@@ -92,7 +92,7 @@ public class MainNavigator implements MainContract.Navigator {
     public void goToPersonDetails(Person person) {
         mainActivity.getCustomAppBar().setState(State.TWO_COLUMNS_WITH_DETAILS);
         mainActivity.getContainersLayout().setState(State.TWO_COLUMNS_WITH_DETAILS);
-        PersonDetailsFragment fragment = PersonDetailsFragment.newInstance(person);
+        PersonDetailsFragment fragment = PersonDetailsFragment.Companion.newInstance(person);
         mainActivity.getSupportFragmentManager()
                 .beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
