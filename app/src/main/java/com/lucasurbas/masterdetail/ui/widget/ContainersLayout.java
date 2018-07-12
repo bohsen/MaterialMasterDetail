@@ -9,9 +9,6 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
-import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +19,9 @@ import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.ui.main.MainNavigator;
 import com.lucasurbas.masterdetail.ui.util.ViewUtils;
 
+import androidx.annotation.Nullable;
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

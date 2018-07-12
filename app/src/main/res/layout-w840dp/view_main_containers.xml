@@ -34,7 +34,7 @@
                 app:cardCornerRadius="0dp"
                 app:bounded_width="@dimen/container_max_width"/>
 
-            <android.support.v4.widget.Space
+            <androidx.legacy.widget.Space
                 android:id="@+id/activity_main__space_master"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -50,7 +50,7 @@
         android:layout_marginTop="?actionBarSize"
         android:gravity="center_horizontal">
 
-        <android.support.v4.widget.Space
+        <androidx.legacy.widget.Space
             android:id="@+id/activity_main__space_details"
             android:layout_width="0dp"
             android:layout_height="match_parent"

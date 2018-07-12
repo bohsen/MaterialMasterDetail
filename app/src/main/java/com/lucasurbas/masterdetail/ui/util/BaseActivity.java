@@ -1,10 +1,11 @@
 package com.lucasurbas.masterdetail.ui.util;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.lucasurbas.masterdetail.app.MasterDetailApplication;
 import com.lucasurbas.masterdetail.injection.app.ApplicationComponent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by Lucas on 19/06/16.

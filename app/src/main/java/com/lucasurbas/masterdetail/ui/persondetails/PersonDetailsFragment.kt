@@ -1,12 +1,12 @@
 package com.lucasurbas.masterdetail.ui.persondetails
 
 import android.os.Bundle
-import android.support.design.widget.AppBarLayout
-import android.support.design.widget.CoordinatorLayout
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.fragment.app.Fragment
+import com.google.android.material.appbar.AppBarLayout
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import com.lucasurbas.masterdetail.ui.main.MainActivity

@@ -3,17 +3,17 @@ package com.lucasurbas.masterdetail.ui.widget;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.MenuRes;
-import android.support.annotation.Nullable;
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.ui.main.MainNavigator;
 
+import androidx.annotation.MenuRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

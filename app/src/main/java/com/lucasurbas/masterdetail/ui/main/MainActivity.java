@@ -1,15 +1,10 @@
 package com.lucasurbas.masterdetail.ui.main;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
+import com.google.android.material.navigation.NavigationView;
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.injection.app.ApplicationComponent;
 import com.lucasurbas.masterdetail.injection.main.DaggerMainComponent;
@@ -21,6 +16,11 @@ import com.lucasurbas.masterdetail.ui.widget.CustomAppBar;
 
 import javax.inject.Inject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

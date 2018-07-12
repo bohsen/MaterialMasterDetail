@@ -1,8 +1,6 @@
 package com.lucasurbas.masterdetail.ui.people;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +12,8 @@ import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.data.Person;
 import com.lucasurbas.masterdetail.ui.widget.FlipAnimator;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

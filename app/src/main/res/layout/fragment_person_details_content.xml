@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,12 +8,12 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/fragment_person_details">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/patientid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:text="010101-0TT1" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toBottomOf="@+id/patientid"
             tools:text="@tools:sample/full_names" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/accessionnumber"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="MI.NJA.TESTTEST" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/department"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toBottomOf="@+id/accessionnumber"
             tools:text="Onkologisk Afdeling" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/age"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
@@ -69,7 +69,7 @@
             app:layout_constraintTop_toBottomOf="@+id/department"
             tools:text="59 år" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/height"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
@@ -80,7 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/age"
             tools:text="170 cm" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/weight"
             android:layout_width="wrap_content"
             android:layout_height="29dp"
@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@+id/height"
             tools:text="70 år" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fragment_person_details__description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -103,5 +103,5 @@
             app:layout_constraintTop_toBottomOf="@+id/weight"
             app:leading="24sp"
             tools:text="@tools:sample/lorem/random" />
-    </android.support.constraint.ConstraintLayout>
-</android.support.v4.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

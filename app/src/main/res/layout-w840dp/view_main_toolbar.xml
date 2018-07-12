@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:theme="@style/AppTheme.ActionBar">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/view_main_toolbar__toolbar_general"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
@@ -29,13 +29,13 @@
             android:layout_marginRight="@dimen/container_horizontal_padding"
             app:bounded_width="@dimen/container_max_width">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/view_main_toolbar__toolbar_specific"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"/>
         </com.lucasurbas.masterdetail.ui.widget.BoundedFrameLayout>
 
-        <android.support.v4.widget.Space
+        <androidx.legacy.widget.Space
             android:id="@+id/view_main_toolbar__space_toolbar"
             android:layout_width="0dp"
             android:layout_height="match_parent"

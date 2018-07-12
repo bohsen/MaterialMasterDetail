@@ -1,8 +1,5 @@
 package com.lucasurbas.masterdetail.ui.main;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.data.Person;
 import com.lucasurbas.masterdetail.ui.favorites.FavoritesFragment;
@@ -12,6 +9,9 @@ import com.lucasurbas.masterdetail.ui.people.PeopleFragment;
 import com.lucasurbas.masterdetail.ui.persondetails.PersonDetailsFragment;
 
 import javax.inject.Inject;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * Created by Lucas on 02/01/2017.

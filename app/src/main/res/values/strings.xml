@@ -30,5 +30,6 @@
     <string name="menu_person_details__print">Print</string>
     <string name="menu_person_details__favorite">Favorite</string>
     <string name="action_item_clicked">Action item clicked</string>
+    <string name="henvisende_afdeling">Henvisende Afdeling</string>
 
 </resources>

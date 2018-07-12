@@ -17,7 +17,7 @@
         android:layout_gravity="center"
         android:text="Hello World!"/>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="8dp">
@@ -30,7 +30,7 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/fragment_map__main_icon"
                 android:src="@drawable/ic_search_24dp"
                 android:layout_width="24dp"
@@ -47,7 +47,7 @@
                 android:textSize="16sp"
                 android:textColor="@color/grey"/>
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/fragment_map__voice_icon"
                 android:src="@drawable/ic_voice_24dp"
                 android:layout_width="24dp"
@@ -56,6 +56,6 @@
 
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

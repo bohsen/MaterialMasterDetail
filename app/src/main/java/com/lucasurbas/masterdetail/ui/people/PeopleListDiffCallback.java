@@ -1,10 +1,10 @@
 package com.lucasurbas.masterdetail.ui.people;
 
-import android.support.v7.util.DiffUtil;
-
 import com.lucasurbas.masterdetail.data.Person;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.DiffUtil;
 
 /**
  * Created by Lucas on 04/01/2017.
