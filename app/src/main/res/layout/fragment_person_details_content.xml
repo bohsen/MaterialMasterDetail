@@ -17,12 +17,14 @@
             android:id="@+id/patientid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:textSize="24sp"
             android:text="TESTID"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="010101-0TT1" />
 
         <androidx.appcompat.widget.AppCompatTextView

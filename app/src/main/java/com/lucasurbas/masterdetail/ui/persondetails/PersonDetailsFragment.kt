@@ -61,8 +61,8 @@ class PersonDetailsFragment : Fragment() {
     }
 
     private fun setPerson(person: Person) {
-        fragment_person_details__toolbar.title = person.name
-        fragment_person_details__toolbar.subtitle = person.name
+//        fragment_person_details__toolbar.title = person.name
+//        fragment_person_details__toolbar.subtitle = person.name
         fragment_person_details__description.text = person.description
     }
 
