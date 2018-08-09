@@ -29,7 +29,6 @@
         android:text="MI.NJA.0L123456"
         android:textSize="16sp"
         android:includeFontPadding="false"
-
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="32dp"

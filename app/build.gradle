@@ -41,17 +41,17 @@ dependencies {
     })
 
     // Support dependencies
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
-    implementation 'com.google.android.material:material:1.0.0-beta01'
-    implementation 'androidx.cardview:cardview:1.0.0-beta01'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0-beta01'
+    implementation 'androidx.appcompat:appcompat:1.0.0-rc01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-rc01'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+    implementation 'androidx.cardview:cardview:1.0.0-rc01'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-rc01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha1'
-    implementation 'com.google.android.material:material:1.0.0-beta01'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'androidx.core:core-ktx:1.0.0-beta01'
+    implementation 'androidx.core:core-ktx:1.0.0-rc01'
 
     // Dagger dependencies
     annotationProcessor "com.google.dagger:dagger-compiler:2.16"
@@ -60,14 +60,6 @@ dependencies {
     // Butterknife dependencies
     implementation 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
-
-    // 4dp line alignment
-    implementation 'com.actinarium.aligned:aligned:0.1'
-
-    // Toolbar alignment
-    implementation 'com.lucasurbas:guidelinescompattoolbar:1.0.2'
-
-    implementation 'com.github.florent37:materialtextfield:1.0.7'
 
     testImplementation 'junit:junit:4.12'
 }
