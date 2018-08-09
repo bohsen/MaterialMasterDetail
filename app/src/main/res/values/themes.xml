@@ -1,7 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.GuidelinesCompat.Light.DarkToolbar.NoActionbar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
+    <!--<style name="AppTheme" parent="Theme.GuidelinesCompat.Light.DarkToolbar.NoActionbar">-->
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorAccent</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,6 +11,8 @@
 
         <!-- Action Mode styles -->
         <item name="actionModeStyle">@style/AppTheme.ActionModeStyle</item>
+        <item name="windowActionModeOverlay">true</item>
+
         <!--<item name="actionModeBackground">@color/bg_action_mode</item>-->
     </style>
 
@@ -24,7 +27,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.ActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+    <style name="AppTheme.ActionModeStyle" parent="AppTheme">
         <item name="background">@color/bg_action_mode</item>
     </style>
 
