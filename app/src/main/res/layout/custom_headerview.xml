@@ -51,7 +51,7 @@
         tools:text="010101-0TT1" />
 
     <TextView
-        android:id="@+id/custom_headerview_name"
+        android:id="@+id/custom_headerview_patient_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="John Smith"
@@ -64,18 +64,14 @@
         tools:text="John Smith" />
 
     <TextView
-        android:id="@+id/custom_headerview_posts_count"
+        android:id="@+id/custom_headerview_patient_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
         android:text="70"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_followers_count"
-        app:layout_constraintEnd_toStartOf="@+id/custom_headerview_followers_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_patient_height"
+        app:layout_constraintEnd_toStartOf="@+id/custom_headerview_patient_height"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_conversion_absoluteHeight="27dp"
@@ -83,63 +79,60 @@
         tools:text="70"/>
 
     <TextView
-        android:id="@+id/custom_headerview_posts_text"
+        android:id="@+id/custom_headerview_patient_weight_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
         android:text="kg"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/custom_headerview_posts_count"
-        app:layout_constraintStart_toStartOf="@+id/custom_headerview_posts_count"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_posts_count"
+        app:layout_constraintEnd_toEndOf="@+id/custom_headerview_patient_weight"
+        app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_weight"
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_weight"
         tools:layout_conversion_absoluteHeight="16dp"
         tools:layout_conversion_absoluteWidth="30dp" />
 
 
-    <TextView
-        android:id="@+id/custom_headerview_followers_count"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/custom_headerview_patient_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
         android:text="170"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="@color/icon_active_unfocused_light_background"
+        android:hint="---"
+        android:lines="1"
+        android:textColorHint="@color/icon_active_unfocused_light_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_name"
-        tools:text="170" />
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_name"
+        tools:text="170"
+        android:background="@null"
+        android:inputType="number"/>
 
     <TextView
-        android:id="@+id/custom_headerview_followers_text"
+        android:id="@+id/custom_headerview_patient_height_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="cm"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/custom_headerview_followers_count"
-        app:layout_constraintStart_toStartOf="@+id/custom_headerview_followers_count"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_followers_count" />
+        app:layout_constraintEnd_toEndOf="@+id/custom_headerview_patient_height"
+        app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_height"
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_height" />
 
     <TextView
         android:id="@+id/custom_headerview_following_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
         android:text="Akut"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_followers_count"
+        app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_patient_height"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/custom_headerview_followers_count"
+        app:layout_constraintStart_toEndOf="@+id/custom_headerview_patient_height"
         tools:text="Akut" />
 
     <TextView
@@ -166,7 +159,7 @@
         android:clickable="false"
         app:checkedIconEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/custom_headerview_name"
-        app:layout_constraintStart_toStartOf="@+id/custom_headerview_name"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_followers_text" />
+        app:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_name"
+        app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_name"
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_height_unit" />
 </merge>
