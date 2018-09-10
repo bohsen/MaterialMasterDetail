@@ -33,4 +33,10 @@
     <string name="henvisende_afdeling">Henvisende Afdeling</string>
     <string name="hint_weight">Weight</string>
 
+    <string-array name="study_priority">
+        <item>Akut</item>
+        <item>Særlige forhold</item>
+        <item>Elektiv</item>
+    </string-array>
+
 </resources>

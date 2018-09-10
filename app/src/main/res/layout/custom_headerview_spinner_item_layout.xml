@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:singleLine="true"
+    android:textAlignment="textEnd"
+    android:textSize="24sp"
+    android:textColor="@color/icon_active_unfocused_light_background"
+    android:textColorHint="@color/icon_active_unfocused_light_background"
+    android:ellipsize="marquee"
+    tools:text="Akut"/>

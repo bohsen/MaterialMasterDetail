@@ -24,6 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
+        android:includeFontPadding="false"
         app:layout_constraintBottom_toBottomOf="@+id/custom_inputview_image_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/custom_inputview_image_view"

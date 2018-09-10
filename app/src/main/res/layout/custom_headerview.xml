@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:tools="http://schemas.android.com/tools"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/vUserProfileRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorPrimary"
-    android:paddingBottom="24dp"
     android:paddingLeft="24dp"
-    android:paddingRight="24dp"
     android:paddingTop="64dp"
+    android:paddingRight="24dp"
+    android:paddingBottom="24dp"
     app:layout_collapseMode="parallax"
     tools:parentTag="com.lucasurbas.masterdetail.ui.widget.HeaderView">
 
     <!--<androidx.constraintlayout.widget.Guideline-->
-        <!--android:id="@+id/guideline"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical"-->
-        <!--app:layout_constraintGuide_percent="0.10" />-->
+    <!--android:id="@+id/guideline"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:orientation="vertical"-->
+    <!--app:layout_constraintGuide_percent="0.10" />-->
 
     <TextView
         android:id="@+id/custom_headerview_accnr_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="?attr/actionBarSize"
         android:includeFontPadding="false"
         android:text="MI.NJA.0L123456"
@@ -36,11 +35,10 @@
         tools:text="MI.NJA.0H1234567" />
 
     <TextView
-        android:id="@+id/custom_headerview_id"
+        android:id="@+id/custom_headerview_patient_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
         android:includeFontPadding="false"
         android:text="010101-0TT1"
         android:textSize="24sp"
@@ -54,37 +52,47 @@
         android:id="@+id/custom_headerview_patient_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:includeFontPadding="false"
         android:text="John Smith"
         android:textSize="36sp"
-        android:includeFontPadding="false"
         app:layout_constraintStart_toStartOf="@+id/custom_headerview_accnr_user"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_id"
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_id"
         tools:layout_conversion_absoluteHeight="16dp"
         tools:layout_conversion_absoluteWidth="232dp"
         tools:text="John Smith" />
 
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/custom_headerview_patient_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:hint="---"
+        android:inputType="number"
+        android:lines="1"
         android:text="70"
         android:textAlignment="center"
+        android:textColor="@color/icon_active_unfocused_light_background"
+        android:textColorHint="@color/icon_active_unfocused_light_background"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_patient_height"
-        app:layout_constraintEnd_toStartOf="@+id/custom_headerview_patient_height"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_conversion_absoluteHeight="27dp"
         tools:layout_conversion_absoluteWidth="44dp"
-        tools:text="70"/>
+        tools:text="70" />
 
     <TextView
         android:id="@+id/custom_headerview_patient_weight_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="kg"
         android:textAlignment="center"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/custom_headerview_patient_weight"
         app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_weight"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_weight"
@@ -96,70 +104,92 @@
         android:id="@+id/custom_headerview_patient_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:hint="---"
+        android:inputType="number"
+        android:lines="1"
         android:minWidth="48dp"
-        android:layout_marginTop="16dp"
         android:text="170"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/icon_active_unfocused_light_background"
-        android:hint="---"
-        android:lines="1"
         android:textColorHint="@color/icon_active_unfocused_light_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_name"
-        tools:text="170"
-        android:background="@null"
-        android:inputType="number"/>
+        tools:text="170" />
 
     <TextView
         android:id="@+id/custom_headerview_patient_height_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="cm"
         android:textAlignment="center"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/custom_headerview_patient_height"
         app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_height"
         app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_height" />
 
-    <TextView
-        android:id="@+id/custom_headerview_following_count"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/custom_headerview_study_priority"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Akut"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/custom_headerview_patient_height"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/custom_headerview_patient_height_unit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/custom_headerview_patient_height"
-        tools:text="Akut" />
+        app:layout_constraintStart_toEndOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/custom_headerview_patient_height"
+        android:background="@null"/>
 
     <TextView
-        android:id="@+id/custom_headerview_following_text"
+        android:id="@+id/custom_headerview_study_priority_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="Prioritet"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/custom_headerview_following_count"
-        app:layout_constraintStart_toStartOf="@+id/custom_headerview_following_count"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_following_count"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/custom_headerview_study_priority"
+        app:layout_constraintStart_toStartOf="@+id/custom_headerview_study_priority"
+        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_study_priority"
         tools:text="Prioritet" />
 
-    <com.google.android.material.chip.Chip
-        style="@style/Widget.MaterialComponents.Chip.Entry"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Onkologisk Afdeling"
-        app:chipIcon="@drawable/ic_vd_hospital_24dp"
-        android:checkable="false"
-        android:clickable="false"
-        app:checkedIconEnabled="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_name"
-        app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_name"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_height_unit" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <!--<com.google.android.material.chip.Chip-->
+    <!--style="@style/Widget.MaterialComponents.Chip.Entry"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:text="Onkologisk Afdeling"-->
+    <!--app:chipIcon="@drawable/ic_vd_hospital_24dp"-->
+    <!--android:checkable="false"-->
+    <!--android:clickable="false"-->
+    <!--app:checkedIconEnabled="false"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_name"-->
+    <!--app:layout_constraintStart_toStartOf="@+id/custom_headerview_patient_name"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_height_unit" />-->
 </merge>

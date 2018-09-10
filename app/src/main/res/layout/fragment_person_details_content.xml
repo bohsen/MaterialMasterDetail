@@ -20,7 +20,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:hint="Afdeling"
+            android:hint="Henvisende afdeling"
             android:src="@drawable/ic_vd_hospital_24dp"
             android:textSize="16.0sp"
             android:tint="@color/icon_active_unfocused_light_background"
