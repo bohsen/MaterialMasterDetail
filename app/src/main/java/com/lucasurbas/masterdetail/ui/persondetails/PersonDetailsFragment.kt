@@ -44,7 +44,7 @@ class PersonDetailsFragment : Fragment() {
 
         if (!(activity as MainActivity).containersLayout.hasTwoColumns()) {
             fragment_person_details__toolbar.setNavigationIcon(R.drawable.ic_back_24dp)
-            fragment_person_details__toolbar.setNavigationOnClickListener { view -> activity!!.onBackPressed() }
+            fragment_person_details__toolbar.setNavigationOnClickListener { _ -> activity!!.onBackPressed() }
         }
 
         // This prevents users from being able to expand/collapse AppBarLayout by flicking the AppbarLayout
