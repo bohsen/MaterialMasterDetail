@@ -10,9 +10,15 @@ import com.google.android.material.appbar.AppBarLayout
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import com.lucasurbas.masterdetail.ui.main.MainActivity
+import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_height
+import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_id
+import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_name
+import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_weight
+import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_study_priority
 import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details__toolbar
 import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_appBar
 import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details__description
+
 
 /**
  * Created by Lucas on 02/01/2017.
@@ -61,8 +67,11 @@ class PersonDetailsFragment : Fragment() {
     }
 
     private fun setPerson(person: Person) {
-//        fragment_person_details__toolbar.title = person.name
-//        fragment_person_details__toolbar.subtitle = person.name
+        custom_headerview_patient_id.text = person.id
+        custom_headerview_patient_name.text = person.name
+        custom_headerview_patient_height.setText(person.height?.toString() ?: "")
+        custom_headerview_patient_weight.setText(person.weight?.toString() ?: "")
+        custom_headerview_study_priority.adapter.getItem(person.priority.ordinal)
         fragment_person_details__description.text = person.description
     }
 
