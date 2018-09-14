@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.lucasurbas.masterdetail.R
+import kotlinx.android.synthetic.main.custom_headerview.view.custom_headerview_patient_height
 import kotlinx.android.synthetic.main.custom_headerview.view.custom_headerview_study_priority
 
 
@@ -26,6 +27,13 @@ class HeaderView : ConstraintLayout {
             adapter = spinnerAdapter
         }
 
+        custom_headerview_patient_height.onFocusChangeListener = object : OnFocusChangeListener {
+            override fun onFocusChange(v: View?, hasFocus: Boolean) {
+//                TODO("Implement removal of hint when edittext focused")
+//                if (hasFocus) custom_headerview_patient_height.hint = ""
+            }
+
+        }
         custom_headerview_study_priority.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
 

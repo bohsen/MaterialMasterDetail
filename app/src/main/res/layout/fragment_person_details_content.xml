@@ -26,20 +26,40 @@
             android:tint="@color/icon_active_unfocused_light_background"
             android:lines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/age"
-            android:layout_width="wrap_content"
+        <com.lucasurbas.masterdetail.ui.persondetails.InputView
+            android:id="@+id/standard"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="59"
-            android:textSize="18.0sp"
-            app:layout_constraintStart_toStartOf="@+id/department"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:hint="Standard"
+            android:src="@drawable/ic_vd_hospital_24dp"
+            android:textSize="16.0sp"
+            android:tint="@color/icon_active_unfocused_light_background"
+            android:lines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/volumen"
             app:layout_constraintTop_toBottomOf="@+id/department"
-            tools:text="59 år" />
+            tools:text="242" />
+
+        <com.lucasurbas.masterdetail.ui.persondetails.InputView
+            android:id="@+id/volumen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Volumen (i mL)"
+            android:textSize="16.0sp"
+            android:tint="@color/icon_active_unfocused_light_background"
+            android:lines="1"
+            app:layout_constraintStart_toEndOf="@id/standard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/department"
+            tools:text="1,52" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/height"
@@ -48,8 +68,8 @@
             android:layout_marginTop="8dp"
             android:text="170"
             android:textSize="18.0sp"
-            app:layout_constraintStart_toStartOf="@+id/age"
-            app:layout_constraintTop_toBottomOf="@+id/age"
+            app:layout_constraintStart_toStartOf="@+id/standard"
+            app:layout_constraintTop_toBottomOf="@+id/standard"
             tools:text="170 cm" />
 
         <androidx.appcompat.widget.AppCompatTextView

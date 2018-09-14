@@ -14,6 +14,7 @@ import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.getColorOrThrow
 import androidx.core.graphics.toRectF
+import androidx.core.view.isVisible
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.lucasurbas.masterdetail.R
@@ -55,8 +56,13 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
 //                    textView.setTextColor(getColor(R.styleable.InputView_android_textColor, android.R.attr.textColor))
                     textView.setText(getText(R.styleable.InputView_android_text))
                     textInputLayout.hint = getText(R.styleable.InputView_android_hint)
-                    imageView.setImageDrawable(getDrawable(R.styleable.InputView_android_src))
-                    imageView.setColorFilter(getColorOrThrow(R.styleable.InputView_android_tint))
+                    if (getDrawable(R.styleable.InputView_android_src) == null) {
+                        Log.d("InputView", "Please remove me")
+                        imageView.isVisible = false
+                    } else {
+                        imageView.setImageDrawable(getDrawable(R.styleable.InputView_android_src))
+                        imageView.setColorFilter(getColorOrThrow(R.styleable.InputView_android_tint))
+                    }
                     textView.maxLines = getInteger(R.styleable.InputView_android_maxLines, Int.MAX_VALUE)
                     textView.minLines = getInteger(R.styleable.InputView_android_minLines, 0)
                     textView.setLines(getInteger(R.styleable.InputView_android_lines, Int.MAX_VALUE))
