@@ -32,6 +32,8 @@
     <string name="action_item_clicked">Action item clicked</string>
     <string name="henvisende_afdeling">Henvisende Afdeling</string>
     <string name="hint_weight">Weight</string>
+    <string name="patient_id">010101-0TT1</string>
+    <string name="patient_name">Thomas Edison Jasoning</string>
 
     <string-array name="study_priority">
         <item>Akut</item>
