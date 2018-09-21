@@ -4,21 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import com.google.android.material.appbar.AppBarLayout
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
-import com.lucasurbas.masterdetail.ui.main.MainActivity
-import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_height
-import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_id
-import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_name
-import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_weight
-import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_study_priority
-import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details__toolbar
-import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_appBar
-import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details__description
-
+import kotlinx.android.synthetic.main.fragment_person_details_new.custom_headerview_patient_id
+import kotlinx.android.synthetic.main.fragment_person_details_new.custom_headerview_patient_name
+import kotlinx.android.synthetic.main.fragment_person_details_new.custom_headerview_study_priority
 
 /**
  * Created by Lucas on 02/01/2017.
@@ -33,46 +25,28 @@ class PersonDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_person_details, container, false)
+        return inflater.inflate(R.layout.fragment_person_details_new, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        this.person = arguments!!.getParcelable(KEY_PERSON)
-
-        setupToolbar()
-        setPerson(person!!)
-    }
-
-    private fun setupToolbar() {
-        fragment_person_details__toolbar.inflateMenu(R.menu.person_details)
-
-        if (!(activity as MainActivity).containersLayout.hasTwoColumns()) {
-            fragment_person_details__toolbar.setNavigationIcon(R.drawable.ic_back_24dp)
-            fragment_person_details__toolbar.setNavigationOnClickListener { _ -> activity!!.onBackPressed() }
+        custom_headerview_study_priority.apply {
+            val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.study_priority, R.layout.custom_headerview_spinner_item_layout)
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
+            adapter = spinnerAdapter
         }
 
-        // This prevents users from being able to expand/collapse AppBarLayout by flicking the AppbarLayout
-        // This way the AppBarLayout will always stay expanded, when the content below doesn't scroll
-        val params = fragment_person_details_appBar.layoutParams as CoordinatorLayout.LayoutParams
-        if (params.behavior == null)
-            params.behavior = AppBarLayout.Behavior()
-        val behaviour = params.behavior as AppBarLayout.Behavior
-        behaviour.setDragCallback(object : AppBarLayout.Behavior.DragCallback() {
-            override fun canDrag(appBarLayout: AppBarLayout): Boolean {
-                return false
-            }
-        })
+        this.person = arguments!!.getParcelable(KEY_PERSON)
+        setPerson(person!!)
     }
 
     private fun setPerson(person: Person) {
         custom_headerview_patient_id.text = person.id
         custom_headerview_patient_name.text = person.name
-        custom_headerview_patient_height.setText(person.height?.toString() ?: "")
-        custom_headerview_patient_weight.setText(person.weight?.toString() ?: "")
+//        custom_headerview_patient_height.setText(person.height?.toString() ?: "")
+//        custom_headerview_patient_weight.setText(person.weight?.toString() ?: "")
         custom_headerview_study_priority.adapter.getItem(person.priority.ordinal)
-        fragment_person_details__description.text = person.description
     }
 
     companion object {
