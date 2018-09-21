@@ -1,16 +1,16 @@
 package com.lucasurbas.masterdetail.ui.persondetails
 
-import android.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import androidx.fragment.app.Fragment
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_id
 import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_patient_name
 import kotlinx.android.synthetic.main.custom_headerview.custom_headerview_study_priority
-
 
 /**
  * Created by Lucas on 02/01/2017.
@@ -21,15 +21,21 @@ class PersonDetailsFragment : Fragment() {
     private var person: Person? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_person_details_new, container, false)
+        return inflater.inflate(R.layout.fragment_person_details_main, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        custom_headerview_study_priority.apply {
+            val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.study_priority, R.layout.custom_headerview_spinner_item_layout)
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
+            adapter = spinnerAdapter
+        }
 
         this.person = arguments!!.getParcelable(KEY_PERSON)
         setPerson(person!!)
