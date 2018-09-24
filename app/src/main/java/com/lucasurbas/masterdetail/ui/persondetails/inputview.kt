@@ -1,19 +1,13 @@
 package com.lucasurbas.masterdetail.ui.persondetails
 
-import android.app.Activity
 import android.content.Context
-import android.graphics.Rect
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.getColorOrThrow
-import androidx.core.graphics.toRectF
 import androidx.core.view.isVisible
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -39,12 +33,6 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
         textView = view.custom_inputview_text_input_edit_text
         imageView = view.custom_inputview_image_view
 
-        textView.onFocusChangeListener = object : OnFocusChangeListener {
-            override fun onFocusChange(v: View?, hasFocus: Boolean) {
-                if (!hasFocus) textView.hideKeyboard()
-            }
-        }
-
         attrs.let {
             context.theme.obtainStyledAttributes(
                 it,
@@ -53,7 +41,6 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
 
                 try {
                     textView.textSize = getDimension(R.styleable.InputView_android_textSize, 16.0f)
-//                    textView.setTextColor(getColor(R.styleable.InputView_android_textColor, android.R.attr.textColor))
                     textView.setText(getText(R.styleable.InputView_android_text))
                     textInputLayout.hint = getText(R.styleable.InputView_android_hint)
                     if (getDrawable(R.styleable.InputView_android_src) == null) {
@@ -72,27 +59,4 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
             }
         }
     }
-
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        if (ev!!.action == MotionEvent.ACTION_UP) Log.d("InputView", "User clicked: X : ${ev.rawX} Y : ${ev.rawY}")
-
-        val textViewrect = Rect()
-        textView.getGlobalVisibleRect(textViewrect)
-        val fRect = textViewrect.toRectF()
-
-        if (ev.action == MotionEvent.ACTION_UP) {
-            if (fRect.contains(ev.rawX, ev.rawY)) {
-                Log.d("InputView", "ACTION_UP event happened in X : ${ev.rawX} Y : ${ev.rawY}")
-            }
-            if (!fRect.contains(ev.rawX, ev.rawY)) {
-                Log.d("InputView", "ACTION_UP event happened outside InputView in X : ${ev.rawX} Y : ${ev.rawY}")
-            }
-        }
-        return super.dispatchTouchEvent(ev)
-    }
-}
-
-fun View.hideKeyboard() {
-    val imm = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.hideSoftInputFromWindow(this.windowToken, 0)
 }
