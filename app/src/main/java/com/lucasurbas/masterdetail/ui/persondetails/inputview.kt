@@ -2,8 +2,8 @@ package com.lucasurbas.masterdetail.ui.persondetails
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
+import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
 import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -44,15 +44,15 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
                     textView.setText(getText(R.styleable.InputView_android_text))
                     textInputLayout.hint = getText(R.styleable.InputView_android_hint)
                     if (getDrawable(R.styleable.InputView_android_src) == null) {
-                        Log.d("InputView", "Please remove me")
                         imageView.isVisible = false
                     } else {
                         imageView.setImageDrawable(getDrawable(R.styleable.InputView_android_src))
                         imageView.setColorFilter(getColorOrThrow(R.styleable.InputView_android_tint))
                     }
-                    textView.maxLines = getInteger(R.styleable.InputView_android_maxLines, Int.MAX_VALUE)
+                    textView.maxLines = getInteger(R.styleable.InputView_android_maxLines, 1)
                     textView.minLines = getInteger(R.styleable.InputView_android_minLines, 0)
-                    textView.setLines(getInteger(R.styleable.InputView_android_lines, Int.MAX_VALUE))
+                    textView.setLines(getInteger(R.styleable.InputView_android_lines, 1))
+                    textView.inputType = getInteger(R.styleable.InputView_android_inputType, EditorInfo.IME_NULL)
                 } finally {
                     recycle()
                 }

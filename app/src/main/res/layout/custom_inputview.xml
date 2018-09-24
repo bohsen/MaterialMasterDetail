@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:parentTag="com.lucasurbas.masterdetail.ui.persondetails.InputView"
-    tools:ignore="ContentDescription">
+    tools:ignore="ContentDescription"
+    tools:showIn="@layout/fragment_person_details">
 
     <ImageView
         android:id="@+id/custom_inputview_image_view"
