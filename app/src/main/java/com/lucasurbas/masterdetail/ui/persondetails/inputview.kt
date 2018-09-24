@@ -1,7 +1,11 @@
 package com.lucasurbas.masterdetail.ui.persondetails
 
 import android.content.Context
+import android.os.Parcel
+import android.os.Parcelable
+import android.text.SpannableStringBuilder
 import android.util.AttributeSet
+import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
@@ -12,7 +16,9 @@ import androidx.core.view.isVisible
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.lucasurbas.masterdetail.R
-import kotlinx.android.synthetic.main.custom_inputview.view.*
+import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_image_view
+import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_edit_text
+import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_layout
 
 
 class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: Int) : ConstraintLayout(context, attrs, defStyleAttr) {
@@ -39,7 +45,7 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
 
                 try {
                     textView.textSize = getDimension(R.styleable.InputView_android_textSize, 16.0f)
-                    textView.setText(getText(R.styleable.InputView_android_text))
+                    textView.text = SpannableStringBuilder(getString(R.styleable.InputView_android_text) ?: "")
                     textInputLayout.hint = getText(R.styleable.InputView_android_hint)
                     if (getDrawable(R.styleable.InputView_android_src) == null) {
                         imageView.isVisible = false
@@ -59,6 +65,45 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
                 } finally {
                     recycle()
                 }
+            }
+        }
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    public override fun onSaveInstanceState(): Parcelable? {
+        val superState = super.onSaveInstanceState()
+        val ss = SavedState(superState)
+        ss.childrenStates = SparseArray()
+        for (i in 0 until childCount) {
+            getChildAt(i).saveHierarchyState(ss.childrenStates as SparseArray<Parcelable>)
+        }
+        return ss
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    public override fun onRestoreInstanceState(state: Parcelable) {
+        val ss = state as SavedState
+        super.onRestoreInstanceState(ss.superState)
+        for (i in 0 until childCount) {
+            getChildAt(i).restoreHierarchyState(ss.childrenStates as SparseArray<Parcelable>)
+        }
+    }
+
+    override fun dispatchSaveInstanceState(container: SparseArray<Parcelable>) {
+        dispatchFreezeSelfOnly(container)
+    }
+
+    override fun dispatchRestoreInstanceState(container: SparseArray<Parcelable>) {
+        dispatchThawSelfOnly(container)
+    }
+
+    class SavedState(superState: Parcelable?) : BaseSavedState(superState) {
+        var childrenStates: SparseArray<Any>? = null
+
+        override fun writeToParcel(out: Parcel, flags: Int) {
+            super.writeToParcel(out, flags)
+            childrenStates?.let {
+                out.writeSparseArray(it)
             }
         }
     }

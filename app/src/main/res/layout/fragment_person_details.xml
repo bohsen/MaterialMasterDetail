@@ -42,6 +42,8 @@
         android:paddingTop="20dp"
         android:paddingEnd="16dp"
         android:paddingBottom="20dp"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
         android:src="@drawable/abc_ic_ab_back_material"
         android:tint="@color/icon_active_unfocused_light_background"
         app:layout_constraintStart_toStartOf="parent"
