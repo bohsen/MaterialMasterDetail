@@ -15,102 +15,60 @@
         <KeyFrameSet>
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_height">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_height"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_height">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_height"
+                android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_height_unit">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_height_unit"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_height_unit">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_height_unit"
+                android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_weight">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_weight"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_weight">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_weight"
+                android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_weight_unit">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_weight_unit"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_weight_unit">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_patient_weight_unit"
+                android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_study_priority">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_study_priority"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_study_priority">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_study_priority"
+                android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_study_priority_text">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_study_priority_text"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_study_priority_text">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_study_priority_text"
+                android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="0"
-                motion:target="@id/custom_headerview_accnr_user">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="1" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_accnr_user"
+                android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="15"
-                motion:target="@id/custom_headerview_accnr_user">
-                <CustomAttribute
-                    motion:attributeName="alpha"
-                    motion:customFloatValue="0" />
-            </KeyAttribute>
+                motion:target="@id/custom_headerview_accnr_user"
+                android:alpha="0" />
             <!--<KeyPosition-->
             <!--app:keyPositionType="pathRelative"-->
             <!--app:framePosition="50"-->
