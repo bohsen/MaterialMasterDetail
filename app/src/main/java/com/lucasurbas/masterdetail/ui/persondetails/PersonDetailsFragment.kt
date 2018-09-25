@@ -8,9 +8,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
-import kotlinx.android.synthetic.main.fragment_person_details_new.custom_headerview_patient_id
-import kotlinx.android.synthetic.main.fragment_person_details_new.custom_headerview_patient_name
-import kotlinx.android.synthetic.main.fragment_person_details_new.custom_headerview_study_priority
+import kotlinx.android.synthetic.main.fragment_person_details.*
 
 /**
  * Created by Lucas on 02/01/2017.
@@ -25,14 +23,14 @@ class PersonDetailsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_person_details_new, container, false)
+        return inflater.inflate(R.layout.fragment_person_details, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         custom_headerview_study_priority.apply {
-            val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.study_priority, R.layout.custom_headerview_spinner_item_layout)
+            val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.study_priority, R.layout.study_priority_spinner_item_layout)
             spinnerAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1)
             adapter = spinnerAdapter
         }

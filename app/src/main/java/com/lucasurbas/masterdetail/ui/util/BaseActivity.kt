@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.lucasurbas.masterdetail.app.MasterDetailApplication
 import com.lucasurbas.masterdetail.injection.app.ApplicationComponent
+import org.jetbrains.annotations.NotNull
 
 
 /**
@@ -20,7 +21,7 @@ abstract class BaseActivity : AppCompatActivity() {
         setupActivityComponent(MasterDetailApplication.getAppComponent(this))
     }
 
-    protected abstract fun setupActivityComponent(applicationComponent: ApplicationComponent)
+    protected abstract fun setupActivityComponent(@NotNull applicationComponent: ApplicationComponent)
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         for (listener in onTouchListeners)
