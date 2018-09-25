@@ -108,9 +108,6 @@
             motion:layout_constraintTop_toBottomOf="@id/custom_headerview_patient_id"
             motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_id"
             motion:layout_constraintBottom_toTopOf="@id/custom_headerview_patient_height">
-            <!--<CustomAttribute-->
-                <!--motion:attributeName="textSize"-->
-                <!--motion:customDimension="32sp" />-->
         </Constraint>
 
         <Constraint
@@ -196,9 +193,6 @@
             android:includeFontPadding="false"
             motion:layout_constraintStart_toEndOf="@android:id/home"
             motion:layout_constraintBottom_toBottomOf="@id/toolbar_image">
-            <!--<CustomAttribute-->
-                <!--motion:attributeName="textSize"-->
-                <!--motion:customDimension="24sp" />-->
         </Constraint>
 
         <Constraint

@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
+import com.lucasurbas.masterdetail.ui.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_person_details.*
 
 /**
@@ -28,6 +29,14 @@ class PersonDetailsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        if (!(activity as MainActivity).containersLayout.hasTwoColumns()) {
+            home.visibility = View.VISIBLE
+            home.setOnClickListener { _ -> activity!!.onBackPressed() }
+        } else {
+            home.visibility = View.INVISIBLE
+            home.setOnClickListener(null)
+        }
 
         custom_headerview_study_priority.apply {
             val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.study_priority, R.layout.study_priority_spinner_item_layout)
