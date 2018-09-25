@@ -12,9 +12,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.lucasurbas.masterdetail.R
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_image_view
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_edit_text
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_layout
+import kotlinx.android.synthetic.main.custom_inputview.view.*
 
 
 class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: Int) : ConstraintLayout(context, attrs, defStyleAttr) {
@@ -53,6 +51,11 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
                     textView.minLines = getInteger(R.styleable.InputView_android_minLines, 0)
                     textView.setLines(getInteger(R.styleable.InputView_android_lines, 1))
                     textView.inputType = getInteger(R.styleable.InputView_android_inputType, EditorInfo.IME_NULL)
+                    textView.setCompoundDrawablesWithIntrinsicBounds(
+                        getDrawable(R.styleable.InputView_android_drawableStart),
+                        getDrawable(R.styleable.InputView_android_drawableTop),
+                        getDrawable(R.styleable.InputView_android_drawableEnd),
+                        getDrawable(R.styleable.InputView_android_drawableBottom))
                 } finally {
                     recycle()
                 }

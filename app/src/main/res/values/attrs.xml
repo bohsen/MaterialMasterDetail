@@ -16,5 +16,9 @@
         <attr name="android:minLines" format="integer"/>
         <attr name="android:lines" format="integer"/>
         <attr name="android:inputType" format="integer"/>
+        <attr name="android:drawableEnd" format="reference"/>
+        <attr name="android:drawableStart" format="reference"/>
+        <attr name="android:drawableTop" format="reference"/>
+        <attr name="android:drawableBottom" format="reference"/>
     </declare-styleable>
 </resources>
