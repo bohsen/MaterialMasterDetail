@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            android:stateListAnimator="@animator/appbar_always_elevated"
             android:theme="@style/AppTheme.ActionBar"/>
 
         <com.lucasurbas.masterdetail.ui.widget.BoundedCardView

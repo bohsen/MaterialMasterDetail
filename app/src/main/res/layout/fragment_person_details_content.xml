@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_person_details_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -25,6 +26,7 @@
             android:textSize="16.0sp"
             android:tint="@color/icon_active_unfocused_light_background"
             android:lines="1"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,15 +35,16 @@
             android:id="@+id/standard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:hint="Standard"
+            android:inputType="number"
+            android:lines="1"
             android:src="@drawable/ic_vd_hospital_24dp"
             android:textSize="16.0sp"
             android:tint="@color/icon_active_unfocused_light_background"
-            android:lines="1"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/volumen"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/department"
             tools:text="242" />
 
@@ -49,15 +52,16 @@
             android:id="@+id/volumen"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:hint="Volumen (i mL)"
+            android:inputType="number|numberDecimal"
             android:textSize="16.0sp"
             android:tint="@color/icon_active_unfocused_light_background"
             android:lines="1"
-            app:layout_constraintStart_toEndOf="@id/standard"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/standard"
             app:layout_constraintTop_toBottomOf="@+id/department"
             tools:text="1,52" />
 
@@ -119,15 +123,16 @@
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:text="MI.NJA.TESTTEST" />
 
-
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fragment_person_details__description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:textSize="14sp"
+            android:text="@string/fragment_people__lorem_ipsum"
             app:layout_constraintStart_toStartOf="@+id/weight"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/accessionnumber"
             tools:text="@tools:sample/lorem/random" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,8 @@ import com.lucasurbas.masterdetail.ui.util.BaseActivity;
 import com.lucasurbas.masterdetail.ui.widget.ContainersLayout;
 import com.lucasurbas.masterdetail.ui.widget.CustomAppBar;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
@@ -71,7 +73,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, Nav
     }
 
     @Override
-    protected void setupActivityComponent(ApplicationComponent applicationComponent) {
+    protected void setupActivityComponent(@NotNull ApplicationComponent applicationComponent) {
         mainComponent = DaggerMainComponent.builder()
                 .applicationComponent(applicationComponent)
                 .mainModule(new MainModule(this))
