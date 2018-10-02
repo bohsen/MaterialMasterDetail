@@ -49,8 +49,26 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="PrivateResource" />
 
+    <ImageView
+        android:id="@+id/fragment_person_details_print"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
+        android:contentDescription="@null"
+        android:focusable="true"
+        android:paddingStart="16dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/ic_print_24dp"
+        android:tint="@color/icon_active_unfocused_light_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <TextView
-        android:id="@+id/custom_headerview_accnr_user"
+        android:id="@+id/fragment_person_details_accnr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
@@ -62,7 +80,7 @@
         tools:text="MI.NJA.0H1234567" />
 
     <TextView
-        android:id="@+id/custom_headerview_patient_id"
+        android:id="@+id/fragment_person_details_patient_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
@@ -70,11 +88,11 @@
         android:text="@string/patient_id"
         android:textColor="@color/icon_active_unfocused_light_background"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_accnr_user"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_person_details_accnr"
         tools:text="@string/patient_id" />
 
     <TextView
-        android:id="@+id/custom_headerview_patient_name"
+        android:id="@+id/fragment_person_details_patient_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
@@ -83,11 +101,11 @@
         android:textColor="@color/icon_active_unfocused_light_background"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/custom_headerview_patient_id"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_person_details_patient_id"
         tools:layout_editor_absoluteX="24dp" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/custom_headerview_patient_height"
+        android:id="@+id/fragment_person_details_patient_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -107,7 +125,7 @@
         tools:text="170" />
 
     <TextView
-        android:id="@+id/custom_headerview_patient_height_unit"
+        android:id="@+id/fragment_person_details_patient_height_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -117,7 +135,7 @@
         android:textSize="16sp" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/custom_headerview_patient_weight"
+        android:id="@+id/fragment_person_details_patient_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -135,7 +153,7 @@
         tools:text="70" />
 
     <TextView
-        android:id="@+id/custom_headerview_patient_weight_unit"
+        android:id="@+id/fragment_person_details_patient_weight_unit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -146,7 +164,7 @@
         />
 
     <Spinner
-        android:id="@+id/custom_headerview_study_priority"
+        android:id="@+id/fragment_person_details_study_priority"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -157,7 +175,7 @@
         />
 
     <TextView
-        android:id="@+id/custom_headerview_study_priority_text"
+        android:id="@+id/fragment_person_details_study_priority_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:elevation="4dp"
@@ -168,14 +186,14 @@
         />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/fragment_person_details_guideline_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.40" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/fragment_person_details_guideline_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

@@ -16,9 +16,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.lucasurbas.masterdetail.R
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_image_view
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_edit_text
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_layout
+import kotlinx.android.synthetic.main.custom_inputview.view.*
 
 
 class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: Int) : ConstraintLayout(context, attrs, defStyleAttr) {
@@ -62,6 +60,13 @@ class InputView(context: Context, attrs: AttributeSet?, @AttrRes defStyleAttr: I
                         getDrawable(R.styleable.InputView_android_drawableTop),
                         getDrawable(R.styleable.InputView_android_drawableEnd),
                         getDrawable(R.styleable.InputView_android_drawableBottom))
+                    textView.isClickable = getBoolean(R.styleable.InputView_android_clickable, true)
+                    textView.isFocusable = getBoolean(R.styleable.InputView_android_focusable, true)
+                    textView.isLongClickable = getBoolean(R.styleable.InputView_android_clickable, true)
+                    textInputLayout.isClickable = getBoolean(R.styleable.InputView_android_clickable, true)
+                    textInputLayout.isFocusable = getBoolean(R.styleable.InputView_android_focusable, true)
+                    textInputLayout.isLongClickable = getBoolean(R.styleable.InputView_android_clickable, true)
+
                 } finally {
                     recycle()
                 }

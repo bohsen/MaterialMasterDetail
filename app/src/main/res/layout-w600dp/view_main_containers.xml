@@ -38,5 +38,5 @@
         android:layout_marginRight="@dimen/container_horizontal_padding"
         android:layout_marginTop="?actionBarSize"
         app:bounded_width="@dimen/container_max_width"
-        app:cardElevation="3dp"/>
+        app:cardElevation="@dimen/container_elevation"/>
 </FrameLayout>

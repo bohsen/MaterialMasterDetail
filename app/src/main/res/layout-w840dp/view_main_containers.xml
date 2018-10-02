@@ -63,7 +63,7 @@
             android:layout_weight="1"
             android:layout_marginLeft="@dimen/container_horizontal_padding"
             android:layout_marginRight="@dimen/container_horizontal_padding"
-            app:cardElevation="3dp"
+            app:cardElevation="@dimen/container_elevation"
             app:bounded_width="@dimen/container_max_width"/>
 
     </LinearLayout>

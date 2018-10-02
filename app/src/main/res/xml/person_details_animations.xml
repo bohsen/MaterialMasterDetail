@@ -15,59 +15,59 @@
         <KeyFrameSet>
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_height"
+                motion:target="@id/fragment_person_details_patient_height"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_height"
+                motion:target="@id/fragment_person_details_patient_height"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_height_unit"
+                motion:target="@id/fragment_person_details_patient_height_unit"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_height_unit"
+                motion:target="@id/fragment_person_details_patient_height_unit"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_weight"
+                motion:target="@id/fragment_person_details_patient_weight"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_weight"
+                motion:target="@id/fragment_person_details_patient_weight"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_patient_weight_unit"
+                motion:target="@id/fragment_person_details_patient_weight_unit"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_patient_weight_unit"
+                motion:target="@id/fragment_person_details_patient_weight_unit"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_study_priority"
+                motion:target="@id/fragment_person_details_study_priority"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_study_priority"
+                motion:target="@id/fragment_person_details_study_priority"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/custom_headerview_study_priority_text"
+                motion:target="@id/fragment_person_details_study_priority_text"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/custom_headerview_study_priority_text"
+                motion:target="@id/fragment_person_details_study_priority_text"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="0"
-                motion:target="@id/custom_headerview_accnr_user"
+                motion:target="@id/fragment_person_details_accnr"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="15"
-                motion:target="@id/custom_headerview_accnr_user"
+                motion:target="@id/fragment_person_details_accnr"
                 android:alpha="0" />
             <!--<KeyPosition-->
             <!--app:keyPositionType="pathRelative"-->
@@ -82,7 +82,7 @@
             android:id="@id/toolbar_image"
             android:layout_height="224dp" />
         <Constraint
-            android:id="@+id/custom_headerview_accnr_user"
+            android:id="@+id/fragment_person_details_accnr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -91,76 +91,76 @@
             motion:layout_constraintTop_toBottomOf="@android:id/home"
             />
         <Constraint
-            android:id="@+id/custom_headerview_patient_id"
+            android:id="@+id/fragment_person_details_patient_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:includeFontPadding="false"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toTopOf="@id/custom_headerview_patient_name"
-            motion:layout_constraintTop_toBottomOf="@id/custom_headerview_accnr_user"
+            motion:layout_constraintBottom_toTopOf="@id/fragment_person_details_patient_name"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_person_details_accnr"
             />
         <Constraint
-            android:id="@+id/custom_headerview_patient_name"
+            android:id="@+id/fragment_person_details_patient_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
-            motion:layout_constraintTop_toBottomOf="@id/custom_headerview_patient_id"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_id"
-            motion:layout_constraintBottom_toTopOf="@id/custom_headerview_patient_height">
+            motion:layout_constraintBottom_toTopOf="@id/fragment_person_details_patient_height"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_patient_id"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_person_details_patient_id">
         </Constraint>
 
         <Constraint
-            android:id="@+id/custom_headerview_patient_height"
+            android:id="@+id/fragment_person_details_patient_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBottom_toTopOf="@id/custom_headerview_patient_height_unit"
-            motion:layout_constraintEnd_toStartOf="@id/guideline2"
-            motion:layout_constraintStart_toStartOf="@id/guideline"
+            motion:layout_constraintBottom_toTopOf="@id/fragment_person_details_patient_height_unit"
+            motion:layout_constraintEnd_toStartOf="@id/fragment_person_details_guideline_right"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_guideline_left"
             />
         <Constraint
-            android:id="@+id/custom_headerview_patient_height_unit"
+            android:id="@+id/fragment_person_details_patient_height_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="8dp"
             motion:layout_constraintBottom_toBottomOf="@id/toolbar_image"
-            motion:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_height"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_height"
+            motion:layout_constraintEnd_toEndOf="@id/fragment_person_details_patient_height"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_patient_height"
             />
         <Constraint
-            android:id="@+id/custom_headerview_patient_weight"
+            android:id="@+id/fragment_person_details_patient_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBaseline_toBaselineOf="@id/custom_headerview_patient_height"
-            motion:layout_constraintEnd_toStartOf="@id/guideline"
+            motion:layout_constraintBaseline_toBaselineOf="@id/fragment_person_details_patient_height"
+            motion:layout_constraintEnd_toStartOf="@id/fragment_person_details_guideline_left"
             motion:layout_constraintHorizontal_chainStyle="spread"
             motion:layout_constraintStart_toStartOf="parent"
             />
         <Constraint
-            android:id="@id/custom_headerview_patient_weight_unit"
+            android:id="@id/fragment_person_details_patient_weight_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_weight"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_weight"
-            motion:layout_constraintTop_toBottomOf="@id/custom_headerview_patient_weight"
+            motion:layout_constraintEnd_toEndOf="@id/fragment_person_details_patient_weight"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_patient_weight"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_person_details_patient_weight"
             />
         <Constraint
-            android:id="@id/custom_headerview_study_priority"
+            android:id="@id/fragment_person_details_study_priority"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/guideline2"
-            motion:layout_constraintTop_toTopOf="@id/custom_headerview_patient_height"
+            motion:layout_constraintStart_toEndOf="@id/fragment_person_details_guideline_right"
+            motion:layout_constraintTop_toTopOf="@id/fragment_person_details_patient_height"
             />
         <Constraint
-            android:id="@id/custom_headerview_study_priority_text"
+            android:id="@id/fragment_person_details_study_priority_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            motion:layout_constraintBaseline_toBaselineOf="@id/custom_headerview_patient_height_unit"
-            motion:layout_constraintEnd_toEndOf="@id/custom_headerview_study_priority"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_study_priority"
-            motion:layout_constraintTop_toBottomOf="@id/custom_headerview_study_priority"
+            motion:layout_constraintBaseline_toBaselineOf="@id/fragment_person_details_patient_height_unit"
+            motion:layout_constraintEnd_toEndOf="@id/fragment_person_details_study_priority"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_study_priority"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_person_details_study_priority"
             />
     </ConstraintSet>
 
@@ -169,7 +169,7 @@
             android:id="@id/toolbar_image"
             android:layout_height="?attr/actionBarSize" />
         <Constraint
-            android:id="@id/custom_headerview_accnr_user"
+            android:id="@id/fragment_person_details_accnr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -178,15 +178,15 @@
             motion:layout_constraintTop_toBottomOf="@android:id/home"
             />
         <Constraint
-            android:id="@id/custom_headerview_patient_id"
+            android:id="@id/fragment_person_details_patient_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_name"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_patient_name"
             motion:layout_constraintTop_toTopOf="@id/toolbar_image"
             />
         <Constraint
-            android:id="@id/custom_headerview_patient_name"
+            android:id="@id/fragment_person_details_patient_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -196,63 +196,63 @@
         </Constraint>
 
         <Constraint
-            android:id="@id/custom_headerview_patient_height"
+            android:id="@id/fragment_person_details_patient_height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            motion:layout_constraintBottom_toTopOf="@id/custom_headerview_patient_height_unit"
-            motion:layout_constraintEnd_toStartOf="@id/guideline2"
-            motion:layout_constraintStart_toStartOf="@id/guideline"
+            motion:layout_constraintBottom_toTopOf="@id/fragment_person_details_patient_height_unit"
+            motion:layout_constraintEnd_toStartOf="@id/fragment_person_details_guideline_right"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_guideline_left"
             />
 
         <Constraint
-            android:id="@id/custom_headerview_patient_height_unit"
+            android:id="@id/fragment_person_details_patient_height_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="8dp"
             android:visibility="invisible"
             motion:layout_constraintBottom_toBottomOf="@id/toolbar_image"
-            motion:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_height"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_height"
+            motion:layout_constraintEnd_toEndOf="@id/fragment_person_details_patient_height"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_patient_height"
             />
         <Constraint
-            android:id="@id/custom_headerview_patient_weight"
+            android:id="@id/fragment_person_details_patient_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            motion:layout_constraintBaseline_toBaselineOf="@id/custom_headerview_patient_height"
-            motion:layout_constraintEnd_toStartOf="@id/guideline"
+            motion:layout_constraintBaseline_toBaselineOf="@id/fragment_person_details_patient_height"
+            motion:layout_constraintEnd_toStartOf="@id/fragment_person_details_guideline_left"
             motion:layout_constraintHorizontal_chainStyle="spread"
             motion:layout_constraintStart_toStartOf="parent"
             />
         <Constraint
-            android:id="@id/custom_headerview_patient_weight_unit"
+            android:id="@id/fragment_person_details_patient_weight_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            motion:layout_constraintEnd_toEndOf="@id/custom_headerview_patient_weight"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_patient_weight"
-            motion:layout_constraintTop_toBottomOf="@id/custom_headerview_patient_weight"
+            motion:layout_constraintEnd_toEndOf="@id/fragment_person_details_patient_weight"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_patient_weight"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_person_details_patient_weight"
             />
         <Constraint
-            android:id="@id/custom_headerview_study_priority"
+            android:id="@id/fragment_person_details_study_priority"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:visibility="invisible"
             motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/guideline2"
-            motion:layout_constraintTop_toTopOf="@id/custom_headerview_patient_height"
+            motion:layout_constraintStart_toEndOf="@id/fragment_person_details_guideline_right"
+            motion:layout_constraintTop_toTopOf="@id/fragment_person_details_patient_height"
             />
         <Constraint
-            android:id="@id/custom_headerview_study_priority_text"
+            android:id="@id/fragment_person_details_study_priority_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            motion:layout_constraintBaseline_toBaselineOf="@id/custom_headerview_patient_height_unit"
-            motion:layout_constraintEnd_toEndOf="@id/custom_headerview_study_priority"
-            motion:layout_constraintStart_toStartOf="@id/custom_headerview_study_priority"
-            motion:layout_constraintTop_toBottomOf="@id/custom_headerview_study_priority"
+            motion:layout_constraintBaseline_toBaselineOf="@id/fragment_person_details_patient_height_unit"
+            motion:layout_constraintEnd_toEndOf="@id/fragment_person_details_study_priority"
+            motion:layout_constraintStart_toStartOf="@id/fragment_person_details_study_priority"
+            motion:layout_constraintTop_toBottomOf="@id/fragment_person_details_study_priority"
             />
     </ConstraintSet>
 
