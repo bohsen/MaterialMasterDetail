@@ -1,0 +1,16 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="reagent"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:name="glass_empty"
+        android:fillAlpha="0"
+        android:pathData="M 4 17 L 4 16 L 9.5 10 L 9.5 5 C 9.5 4 10 4 10.5 4 L 13.5 4 C 14 4 14.5 4 14.5 5 L 14.5 10 L 20 16 L 20 17 C 20.005 17.339 19.473 17.669 18.481 17.943 C 17.489 18.217 16.086 18.422 14.477 18.526 C 12.867 18.631 11.133 18.631 9.523 18.526 C 7.914 18.422 6.511 18.217 5.519 17.943 C 4.527 17.669 3.995 17.339 4 17 C 3.995 16.323 4.527 15.662 5.519 15.114 C 6.511 14.565 7.914 14.157 9.523 13.947 C 11.133 13.737 12.867 13.737 14.477 13.947 C 16.086 14.157 17.489 14.565 18.481 15.114 C 19.473 15.662 20.005 16.323 20 17"
+        android:strokeWidth="2"
+        android:strokeColor="@color/icon_active_unfocused_light_background"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"/>
+</vector>
