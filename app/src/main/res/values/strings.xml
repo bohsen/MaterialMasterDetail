@@ -34,6 +34,11 @@
     <string name="hint_weight">Weight</string>
     <string name="patient_id">010101-0TT1</string>
     <string name="patient_name">Thomas Edison Jasoning</string>
+    <string name="fragment_person_details_volumen">Volumen (i mL)</string>
+    <string name="fragment_person_details_standard">Standard</string>
+    <string name="fragment_person_details_requesting_service">Henvisende instans</string>
+    <string name="fragment_person_details_syringe_weight_before">Sprøjtens vægt før injektion (g)</string>
+    <string name="fragment_person_details_syringe_weight_after">Sprøjtens vægt efter injektion (g)</string>
 
     <string-array name="study_priority">
         <item>Akut</item>

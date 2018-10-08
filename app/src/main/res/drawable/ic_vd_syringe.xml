@@ -1,0 +1,16 @@
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="syringe"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:name="path"
+        android:fillColor="@color/icon_active_unfocused_light_background"
+        android:pathData="M 3 22 L 3 20 L 6.5 16.5 L 5 15 L 12 8 L 10.5 6.5 L 12 5 L 19 12 L 17.5 13.5 L 16 12 L 9 19 L 7.5 17.5 Z M 12.5 9.5 L 7 15 L 9 17 L 14.5 11.5 Z"/>
+    <path
+        android:name="path_1"
+        android:fillColor="@color/icon_active_unfocused_light_background"
+        android:pathData="M 15 7 L 17 5 L 16 4 L 18 2 L 22 6 L 20 8 L 19 7 L 17 9 Z"/>
+</vector>
