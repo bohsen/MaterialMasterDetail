@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.PopupWindow
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import com.lucasurbas.masterdetail.R
@@ -18,7 +19,9 @@ import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_de
 import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_patient_name
 import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_study_priority
 import kotlinx.android.synthetic.main.fragment_person_details.home
+import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details__description
 import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details_standard
+
 
 /**
  * Created by Lucas on 02/01/2017.
@@ -29,9 +32,9 @@ class PersonDetailsFragment : Fragment() {
     private var person: Person? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_person_details, container, false)
     }
@@ -70,8 +73,25 @@ class PersonDetailsFragment : Fragment() {
             }
         }
 
+        fragment_person_details__description.apply {
+            setOnClickListener {
+                showPopupWindow()
+            }
+        }
+
         this.person = arguments!!.getParcelable(KEY_PERSON)
         setPerson(person!!)
+    }
+
+    private fun showPopupWindow() {
+        val popupView = layoutInflater.inflate(R.layout.standard_popup_window, null)
+        PopupWindow(context).apply {
+            setTouchable(true)
+            setFocusable(true)
+            setOutsideTouchable(true)
+            setContentView(popupView)
+            showAsDropDown(fragment_person_details__description)
+        }
     }
 
     private fun setPerson(person: Person) {

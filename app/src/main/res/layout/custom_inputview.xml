@@ -11,13 +11,14 @@
         android:id="@+id/custom_inputview_image_view"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/custom_inputview_text_input_layout"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_vd_hospital_24dp" />
+        tools:src="@drawable/ic_vd_hospital_material_design" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/custom_inputview_text_input_layout"

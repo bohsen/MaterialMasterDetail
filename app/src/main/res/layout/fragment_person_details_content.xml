@@ -91,6 +91,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="40dp"
             android:layout_marginEnd="16dp"
             android:hint="@string/fragment_person_details_syringe_weight_after"
             android:inputType="number|numberDecimal"
@@ -115,4 +116,5 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_person_details_syringe_weight_after"
             tools:text="@tools:sample/lorem/random" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.core.widget.NestedScrollView>

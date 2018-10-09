@@ -12,6 +12,7 @@
         <!-- Action Mode styles -->
         <item name="actionModeStyle">@style/AppTheme.ActionModeStyle</item>
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:popupWindowStyle">@style/AppTheme.PopupWindowStyle</item>
 
         <!--<item name="actionModeBackground">@color/bg_action_mode</item>-->
     </style>
@@ -29,6 +30,12 @@
 
     <style name="AppTheme.ActionModeStyle" parent="AppTheme">
         <item name="background">@color/bg_action_mode</item>
+    </style>
+
+    <!-- Style taht controls how a popupWindow should look -->
+    <style name="AppTheme.PopupWindowStyle" parent="AppTheme">
+        <item name="android:popupBackground">@color/colorBackground</item>
+        <item name="android:popupElevation">12dp</item>
     </style>
 
 </resources>
