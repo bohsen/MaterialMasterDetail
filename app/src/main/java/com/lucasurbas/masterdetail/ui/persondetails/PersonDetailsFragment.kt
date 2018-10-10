@@ -1,10 +1,11 @@
 package com.lucasurbas.masterdetail.ui.persondetails
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -63,12 +64,10 @@ class PersonDetailsFragment : Fragment() {
                 val popup = PopupMenu(context, it)
                 val inflater: MenuInflater = popup.menuInflater
                 inflater.inflate(R.menu.standard_test, popup.menu)
-                popup.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
-                    override fun onMenuItemClick(item: MenuItem?): Boolean {
-                        fragment_person_details_standard.custom_inputview_text_input_edit_text.text = SpannableStringBuilder(item.toString())
-                        return true
-                    }
-                })
+                popup.setOnMenuItemClickListener { item ->
+                    fragment_person_details_standard.custom_inputview_text_input_edit_text.text = SpannableStringBuilder(item.toString())
+                    true
+                }
                 popup.show()
             }
         }
@@ -86,12 +85,18 @@ class PersonDetailsFragment : Fragment() {
     private fun showPopupWindow() {
         val popupView = layoutInflater.inflate(R.layout.standard_popup_window, null)
         PopupWindow(context).apply {
-            setTouchable(true)
-            setFocusable(true)
-            setOutsideTouchable(true)
-            setContentView(popupView)
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            isTouchable = true
+            isFocusable = true
+            isOutsideTouchable = true
+            overlapAnchor = true
+            contentView = popupView
             showAsDropDown(fragment_person_details__description)
         }
+//        ListPopupWindow(requireContext()).apply {
+//            anchorView = fragment_person_details__description
+//            setPromptView(popupView)
+//        }.show()
     }
 
     private fun setPerson(person: Person) {
@@ -104,7 +109,7 @@ class PersonDetailsFragment : Fragment() {
 
     companion object {
 
-        private val KEY_PERSON = "key_person"
+        private const val KEY_PERSON = "key_person"
 
         fun newInstance(person: Person): PersonDetailsFragment {
             val fragment = PersonDetailsFragment()
