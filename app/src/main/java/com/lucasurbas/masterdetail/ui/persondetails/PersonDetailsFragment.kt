@@ -84,12 +84,15 @@ class PersonDetailsFragment : Fragment() {
 
     private fun showPopupWindow() {
         val popupView = layoutInflater.inflate(R.layout.standard_popup_window, null)
+        popupView.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         PopupWindow(context).apply {
             setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             isTouchable = true
             isFocusable = true
             isOutsideTouchable = true
             overlapAnchor = true
+            width = popupView.measuredWidth
+            height = popupView.measuredHeight
             contentView = popupView
             showAsDropDown(fragment_person_details__description)
         }
