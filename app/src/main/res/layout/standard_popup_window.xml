@@ -1,103 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Widget.MaterialComponents.CardView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="8dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable name="item" type="com.lucasurbas.masterdetail.data.Standard" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/standard_popup_viewroot"
+        style="@style/Widget.MaterialComponents.CardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorBackground"
-        >
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/avatar_image"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:padding="4dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_favorite_24dp"
-            app:layout_constraintBottom_toTopOf="@+id/media_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:src="@drawable/ic_favorite_24dp"/>
-
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:text="Titel"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#DE000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatar_image"
-            app:layout_constraintTop_toTopOf="@+id/avatar_image"
-            tools:text="This is a title"/>
-
-        <TextView
-            android:id="@+id/subtitle_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
-            android:text="Subtitel"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="#8A000000"
-            app:layout_constraintBottom_toBottomOf="@+id/avatar_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatar_image"
-            tools:text="This is a subtitle"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/media_image"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintBottom_toTopOf="@+id/action_button_1"
-            app:layout_constraintDimensionRatio="H,16:9"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/avatar_image"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/action_button_1"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Tilføj"
-            android:textColor="@color/colorAccent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/media_image"
-            tools:text="Action1"/>
+            android:background="@color/colorBackground"
+            >
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/action_button_2"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="Annuller"
-            android:textColor="#DE000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/action_button_1"
-            app:layout_constraintTop_toTopOf="@+id/action_button_1"
-            tools:text="Action2" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:padding="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_favorite_24dp"
+                app:layout_constraintBottom_toTopOf="@+id/media_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:src="@drawable/ic_favorite_24dp"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="Title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#DE000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/avatar_image"
+                app:layout_constraintTop_toTopOf="@+id/avatar_image"
+                tools:text="This is a title"/>
+
+            <TextView
+                android:id="@+id/subtitle_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="Subtitle"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#8A000000"
+                app:layout_constraintBottom_toBottomOf="@+id/avatar_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/avatar_image"
+                tools:text="This is a subtitle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/media_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/action_button_1"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avatar_image"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_button_1"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="Tilføj"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/media_image"
+                tools:text="Action1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/action_button_2"
+                style="@style/Widget.AppCompat.Button.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Annuller"
+                android:textColor="#DE000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/action_button_1"
+                app:layout_constraintTop_toTopOf="@+id/action_button_1"
+                tools:text="Action2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

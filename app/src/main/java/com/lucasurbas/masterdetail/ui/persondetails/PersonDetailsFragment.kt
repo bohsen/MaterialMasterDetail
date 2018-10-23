@@ -12,16 +12,11 @@ import android.widget.ArrayAdapter
 import android.widget.PopupWindow
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
-import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import com.lucasurbas.masterdetail.ui.main.MainActivity
-import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_edit_text
-import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_patient_id
-import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_patient_name
-import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_study_priority
-import kotlinx.android.synthetic.main.fragment_person_details.home
-import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details__description
-import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details_standard
+import kotlinx.android.synthetic.main.custom_inputview.view.*
+import kotlinx.android.synthetic.main.fragment_person_details.*
+import kotlinx.android.synthetic.main.fragment_person_details_content.*
 
 
 /**
@@ -90,7 +85,6 @@ class PersonDetailsFragment : Fragment() {
             isTouchable = true
             isFocusable = true
             isOutsideTouchable = true
-            overlapAnchor = true
             width = popupView.measuredWidth
             height = popupView.measuredHeight
             contentView = popupView
