@@ -9,12 +9,17 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.lucasurbas.masterdetail"
-        minSdkVersion 25
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode commitCount
         versionName "1.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         resConfigs "en"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                compilerArgumentProvider new EnableDaggerIncrementalAP()
+            }
+        }
     }
 
     buildTypes {
@@ -56,12 +61,20 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.0.0'
 
     // Dagger dependencies
-    annotationProcessor "com.google.dagger:dagger-compiler:2.17"
-    implementation "com.google.dagger:dagger:2.17"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.18"
+    implementation "com.google.dagger:dagger:2.18"
 
     // Butterknife dependencies
-    implementation 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
+    implementation 'com.jakewharton:butterknife:9.0.0-rc1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
 
     testImplementation 'junit:junit:4.12'
+}
+
+class EnableDaggerIncrementalAP implements CommandLineArgumentProvider {
+
+    @Override
+    Iterable<String> asArguments() {
+        return ["-Adagger.gradle.incremental"]
+    }
 }
