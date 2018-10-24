@@ -10,8 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.PopupWindow
+
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import com.lucasurbas.masterdetail.ui.main.MainActivity
 import kotlinx.android.synthetic.main.custom_inputview.view.*
@@ -28,9 +30,9 @@ class PersonDetailsFragment : Fragment() {
     private var person: Person? = null
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_person_details, container, false)
     }
