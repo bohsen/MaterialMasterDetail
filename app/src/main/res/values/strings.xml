@@ -32,7 +32,7 @@
     <string name="action_item_clicked">Action item clicked</string>
     <string name="henvisende_afdeling">Henvisende Afdeling</string>
     <string name="hint_weight">Weight</string>
-    <string name="patient_id">010101-0TT1</string>
+    <string name="patient_id">010101&#8211;0TT1</string>
     <string name="patient_name">Thomas Edison Jasoning</string>
     <string name="fragment_person_details_volumen">Volumen (i mL)</string>
     <string name="fragment_person_details_standard">Standard</string>
@@ -45,5 +45,8 @@
         <item>Særlige forhold</item>
         <item>Elektiv</item>
     </string-array>
+
+    <string name="item_id">Standard: %1$s</string>
+    <string name="item_factor">Dilutionfactor: %1$s</string>
 
 </resources>

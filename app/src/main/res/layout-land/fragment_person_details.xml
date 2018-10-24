@@ -42,7 +42,7 @@
         android:paddingTop="20dp"
         android:paddingEnd="16dp"
         android:paddingBottom="20dp"
-        android:src="@drawable/abc_ic_ab_back_material"
+        android:src="@drawable/ic_back_24dp"
         android:tint="@color/icon_active_unfocused_light_background"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,8 +75,6 @@
         android:includeFontPadding="false"
         android:text="MI.NJA.0L123456"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="64dp"
         tools:text="MI.NJA.0H1234567" />
 
     <TextView

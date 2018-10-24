@@ -89,6 +89,7 @@ public class PeopleFragment extends Fragment
         adapter = new PeopleAdapter();
         adapter.setOnPersonClickListener(this);
         recyclerView.setAdapter(adapter);
+//        recyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL));
     }
 
     private void setupToolbar() {

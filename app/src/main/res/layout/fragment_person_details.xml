@@ -77,8 +77,6 @@
         android:includeFontPadding="false"
         android:text="MI.NJA.0L123456"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="64dp"
         tools:text="MI.NJA.0H1234567" />
 
     <TextView
