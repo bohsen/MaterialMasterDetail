@@ -4,6 +4,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.injection.app.ApplicationComponent;
@@ -18,11 +24,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.inject.Inject;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.view.GravityCompat;
-import androidx.core.view.ViewCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -194,20 +195,23 @@ public class MainActivity extends BaseActivity implements MainContract.View, Nav
         }
     }
 
+    @NonNull
     public CustomAppBar getCustomAppBar() {
         return customAppBar;
     }
 
+    @NonNull
     public ContainersLayout getContainersLayout() {
         return containersLayout;
     }
 
+    @NonNull
     public MainContract.Navigator getNavigator() {
         return navigator;
     }
 
+    @NonNull
     public MainComponent getMainComponent() {
         return mainComponent;
     }
-
 }

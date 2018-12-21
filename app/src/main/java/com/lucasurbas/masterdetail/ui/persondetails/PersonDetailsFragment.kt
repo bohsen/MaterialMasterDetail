@@ -1,5 +1,8 @@
 package com.lucasurbas.masterdetail.ui.persondetails
 
+import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
@@ -10,9 +13,10 @@ import android.widget.ArrayAdapter
 import android.widget.PopupWindow
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lucasurbas.masterdetail.R
@@ -20,22 +24,19 @@ import com.lucasurbas.masterdetail.data.Person
 import com.lucasurbas.masterdetail.data.Standard
 import com.lucasurbas.masterdetail.ui.main.MainActivity
 import com.lucasurbas.masterdetail.ui.widget.DataBindingAdapter
-import kotlinx.android.synthetic.main.custom_inputview.view.*
-import kotlinx.android.synthetic.main.fragment_person_details.*
-import kotlinx.android.synthetic.main.fragment_person_details_content.*
+import kotlinx.android.synthetic.main.custom_inputview.view.custom_inputview_text_input_edit_text
+import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_patient_id
+import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_patient_name
+import kotlinx.android.synthetic.main.fragment_person_details.fragment_person_details_study_priority
+import kotlinx.android.synthetic.main.fragment_person_details.home
+import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details__description
+import kotlinx.android.synthetic.main.fragment_person_details_content.fragment_person_details_standard
 
-
-/**
- * Created by Lucas on 02/01/2017.
- */
 
 class PersonDetailsFragment : Fragment() {
 
     private var person: Person? = null
-
-    private val model by lazy {
-        ViewModelProviders.of(this).get(StandardsViewModel::class.java)
-    }
+    private val model: StandardsViewModel by viewModels()
 
     private val adapter = StandardsAdapter()
 
@@ -89,19 +90,22 @@ class PersonDetailsFragment : Fragment() {
         setPerson(person!!)
     }
 
+    @SuppressLint("NewApi")
     private fun showPopupWindow() {
         val popupView = layoutInflater.inflate(R.layout.standard_popup_window, null)
+        popupView.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         PopupWindow(context).apply {
-            setTouchable(true)
-            setFocusable(true)
-            setOutsideTouchable(true)
-            setContentView(popupView)
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            isTouchable = true
+            isFocusable = true
+            overlapAnchor = false
+            width = popupView.measuredWidth
+            height = popupView.measuredHeight
+            contentView = popupView
             showAsDropDown(fragment_person_details__description)
         }
-        val list = popupView
-            .findViewById<RecyclerView>(R.id.standard_recyclerview_popup)
-        list.apply {
-            //            addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+        popupView.findViewById<RecyclerView>(R.id.standard_recyclerview_popup).apply {
+                        addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
             adapter = this@PersonDetailsFragment.adapter
             layoutManager = LinearLayoutManager(context)
         }

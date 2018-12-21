@@ -8,10 +8,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="windowActionModeOverlay">true</item>
 
         <!-- Action Mode styles -->
-        <item name="actionModeStyle">@style/AppTheme.ActionModeStyle</item>
-        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeStyle">@style/AppTheme.ActionModeStyle</item>
         <item name="android:popupWindowStyle">@style/AppTheme.PopupWindowStyle</item>
 
         <!--<item name="actionModeBackground">@color/bg_action_mode</item>-->

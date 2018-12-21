@@ -12,6 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.data.Person;
 import com.lucasurbas.masterdetail.injection.people.PeopleModule;
@@ -22,18 +29,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-/**
- * Created by Lucas on 04/01/2017.
- */
 
 public class PeopleFragment extends Fragment
         implements PeopleContract.View, PersonView.OnPersonClickListener, ActionMode.Callback {
@@ -64,7 +61,7 @@ public class PeopleFragment extends Fragment
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
     }
@@ -84,7 +81,7 @@ public class PeopleFragment extends Fragment
     private void setupRecyclerView() {
         recyclerView.setHasFixedSize(true);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity());
         recyclerView.setLayoutManager(layoutManager);
         adapter = new PeopleAdapter();
         adapter.setOnPersonClickListener(this);
@@ -93,7 +90,7 @@ public class PeopleFragment extends Fragment
     }
 
     private void setupToolbar() {
-        appBar = ((MainActivity) getActivity()).getCustomAppBar();
+        appBar = ((MainActivity) requireActivity()).getCustomAppBar();
         appBar.setTitle(getString(R.string.fragment_people__title));
         appBar.setMenuRes(R.menu.people_general, R.menu.people_specific, R.menu.people_merged);
     }
@@ -103,7 +100,7 @@ public class PeopleFragment extends Fragment
     }
 
     private void inject() {
-        ((MainActivity) getActivity())
+        ((MainActivity) requireActivity())
                 .getMainComponent()
                 .plus(new PeopleModule())
                 .inject(this);
