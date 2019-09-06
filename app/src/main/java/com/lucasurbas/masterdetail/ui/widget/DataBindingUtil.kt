@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -25,12 +24,6 @@ class DataBindingViewHolder<T>(private val binding: ViewDataBinding) :
 
 abstract class DataBindingAdapter<T>(diffCallback: DiffUtil.ItemCallback<T>) :
     ListAdapter<T, DataBindingViewHolder<T>>(diffCallback) {
-
-    /**
-     * The [SelectionTracker] used by the [RecyclerView]
-     */
-    var selectionTracker: SelectionTracker<T>? = null
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataBindingViewHolder<T> {
         val layoutInflater = LayoutInflater.from(parent.context)

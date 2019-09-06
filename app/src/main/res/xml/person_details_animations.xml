@@ -15,59 +15,59 @@
         <KeyFrameSet>
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/fragment_person_details_patient_height"
+                motion:motionTarget="@id/fragment_person_details_patient_height"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/fragment_person_details_patient_height"
+                motion:motionTarget="@id/fragment_person_details_patient_height"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/fragment_person_details_patient_height_unit"
+                motion:motionTarget="@id/fragment_person_details_patient_height_unit"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/fragment_person_details_patient_height_unit"
+                motion:motionTarget="@id/fragment_person_details_patient_height_unit"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/fragment_person_details_patient_weight"
+                motion:motionTarget="@id/fragment_person_details_patient_weight"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/fragment_person_details_patient_weight"
+                motion:motionTarget="@id/fragment_person_details_patient_weight"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/fragment_person_details_patient_weight_unit"
+                motion:motionTarget="@id/fragment_person_details_patient_weight_unit"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/fragment_person_details_patient_weight_unit"
+                motion:motionTarget="@id/fragment_person_details_patient_weight_unit"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/fragment_person_details_study_priority"
+                motion:motionTarget="@id/fragment_person_details_study_priority"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/fragment_person_details_study_priority"
+                motion:motionTarget="@id/fragment_person_details_study_priority"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="10"
-                motion:target="@id/fragment_person_details_study_priority_text"
+                motion:motionTarget="@id/fragment_person_details_study_priority_text"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="30"
-                motion:target="@id/fragment_person_details_study_priority_text"
+                motion:motionTarget="@id/fragment_person_details_study_priority_text"
                 android:alpha="0" />
             <KeyAttribute
                 motion:framePosition="0"
-                motion:target="@id/fragment_person_details_accnr"
+                motion:motionTarget="@id/fragment_person_details_accnr"
                 android:alpha="1" />
             <KeyAttribute
                 motion:framePosition="15"
-                motion:target="@id/fragment_person_details_accnr"
+                motion:motionTarget="@id/fragment_person_details_accnr"
                 android:alpha="0" />
             <!--<KeyPosition-->
             <!--app:keyPositionType="pathRelative"-->
