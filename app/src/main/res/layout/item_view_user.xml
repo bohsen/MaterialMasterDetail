@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.lucasurbas.masterdetail.ui.people.PersonView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_view_user__row"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"/>
+    android:background="@drawable/selected_item_background"
+    android:orientation="vertical" />
