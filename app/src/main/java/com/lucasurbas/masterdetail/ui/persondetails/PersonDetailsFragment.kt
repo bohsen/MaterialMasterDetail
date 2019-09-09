@@ -67,7 +67,7 @@ class PersonDetailsFragment : Fragment() {
 
         fragment_person_details_standard.apply {
             custom_inputview_text_input_edit_text.setOnClickListener {
-                // TODO: Change this to use a PopupWindow instead - this makes it possible to use adapters with a predifined layout
+                // TODO: Change this to use a PopupWindow instead - this makes it possible to use adapters with a predefined layout
                 // Check this SO question: https://stackoverflow.com/questions/34030720/listpopupwindow-doesnt-display-correctly-in-textinputlayout
                 val popup = PopupMenu(context, it)
                 val inflater: MenuInflater = popup.menuInflater

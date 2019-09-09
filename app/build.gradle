@@ -5,9 +5,12 @@ apply plugin: 'kotlin-kapt'
 
 def commitCount = Integer.parseInt('git rev-list --all --count'.execute([], project.rootDir).text.trim())
 
+androidExtensions {
+    experimental = true
+}
+
 android {
     compileSdkVersion 28
-    buildToolsVersion '29.0.1'
     defaultConfig {
         applicationId "com.lucasurbas.masterdetail"
         minSdkVersion 21
@@ -49,10 +52,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-}
-
-androidExtensions {
-    experimental = true
 }
 
 dependencies {

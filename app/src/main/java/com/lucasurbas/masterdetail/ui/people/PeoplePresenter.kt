@@ -19,7 +19,7 @@ constructor(private val context: Context, private val navigator: PeopleContract.
     PeopleContract.Presenter {
     private var view: PeopleContract.View? = null
 
-    private var peopleList: MutableList<Person>? = null
+    private val peopleList: MutableList<Person> = ArrayList()
     private val selectedPeopleList = ArrayList<Person>()
     val selectedItems = SparseBooleanArray()
 
@@ -92,17 +92,16 @@ constructor(private val context: Context, private val navigator: PeopleContract.
     }
 
     override fun getPeople() {
-        peopleList = ArrayList()
         for (i in 0..7) {
             val person = Person(
                 randomId,
                 randomName,
                 context.getString(R.string.fragment_people__lorem_ipsum)
             )
-            peopleList!!.add(person)
+            peopleList.add(person)
         }
         if (view != null) {
-            view!!.showPeopleList(peopleList)
+            view?.showPeopleList(peopleList)
         }
     }
 
@@ -126,8 +125,8 @@ constructor(private val context: Context, private val navigator: PeopleContract.
                     randomName,
                     context.getString(R.string.fragment_people__lorem_ipsum)
                 )
-                peopleList!!.add(0, person)
-                view!!.showPeopleList(peopleList)
+                peopleList.add(0, person)
+                view?.showPeopleList(peopleList)
             }
         }, 2000)
     }
@@ -135,23 +134,23 @@ constructor(private val context: Context, private val navigator: PeopleContract.
     override fun select(person: Person) {
         view!!.showToast(
             "DrawableAction selected: " + person.name +
-                    " at index: " + peopleList!!.indexOf(person)
+                    " at index: " + peopleList.indexOf(person)
         )
         if (selectedPeopleList.size == 0) {
             view!!.startActionMode()
         }
         selectedPeopleList.add(person)
-        selectedItems.put(peopleList!!.indexOf(person), true)
+        selectedItems.put(peopleList.indexOf(person), true)
         view!!.updateActionModeCount(selectedPeopleList.size)
     }
 
     override fun unselect(person: Person) {
         view!!.showToast(
             "DrawableAction unselected: " + person.name +
-                    " at index: " + peopleList!!.indexOf(person)
+                    " at index: " + peopleList.indexOf(person)
         )
         selectedPeopleList.remove(person)
-        selectedItems.delete(peopleList!!.indexOf(person))
+        selectedItems.delete(peopleList.indexOf(person))
         if (selectedPeopleList.size == 0) {
             view!!.stopActionMode()
         } else {
