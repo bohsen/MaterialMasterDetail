@@ -86,8 +86,8 @@ class PersonDetailsFragment : Fragment() {
             }
         }
 
-        this.person = arguments!!.getParcelable(KEY_PERSON)
-        setPerson(person!!)
+        person = arguments?.getParcelable(KEY_PERSON)
+        setPerson(person)
     }
 
     @SuppressLint("NewApi")
@@ -105,19 +105,21 @@ class PersonDetailsFragment : Fragment() {
             showAsDropDown(fragment_person_details__description)
         }
         popupView.findViewById<RecyclerView>(R.id.standard_recyclerview_popup).apply {
-                        addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+            addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
             adapter = this@PersonDetailsFragment.adapter
             layoutManager = LinearLayoutManager(context)
         }
         adapter.submitList(model.standards)
     }
 
-    private fun setPerson(person: Person) {
-        fragment_person_details_patient_id.text = person.id
-        fragment_person_details_patient_name.text = person.name
+    private fun setPerson(person: Person?) {
+        if (person != null) {
+            fragment_person_details_patient_id.text = person.id
+            fragment_person_details_patient_name.text = person.name
 //        custom_headerview_patient_height.setText(person.height?.toString() ?: "")
 //        custom_headerview_patient_weight.setText(person.weight?.toString() ?: "")
-        fragment_person_details_study_priority.adapter.getItem(person.priority.ordinal)
+            fragment_person_details_study_priority.adapter.getItem(person.priority.ordinal)
+        }
     }
 
     companion object {

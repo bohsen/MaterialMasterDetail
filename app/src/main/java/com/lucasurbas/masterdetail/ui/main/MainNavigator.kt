@@ -17,26 +17,6 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
         SINGLE_COLUMN_MASTER, SINGLE_COLUMN_DETAILS, TWO_COLUMNS_EMPTY, TWO_COLUMNS_WITH_DETAILS
     }
 
-    private fun clearDetails(): Boolean {
-        val details = mainActivity.supportFragmentManager.findFragmentByTag(TAG_DETAILS)
-        if (details != null) {
-            mainActivity.supportFragmentManager
-                .beginTransaction()
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .remove(details)
-                .commitNow()
-            return true
-        }
-        return false
-    }
-
-    private fun clearMaster() {
-        val master = mainActivity.supportFragmentManager.findFragmentByTag(TAG_MASTER)
-        if (master != null) {
-            mainActivity.supportFragmentManager.beginTransaction().remove(master).commitNow()
-        }
-    }
-
     override fun goToHomeFeed() {
         clearDetails()
         mainActivity.getCustomAppBar().setState(State.SINGLE_COLUMN_MASTER)
@@ -97,6 +77,26 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
             }
         }
         return false
+    }
+
+    private fun clearDetails(): Boolean {
+        val details = mainActivity.supportFragmentManager.findFragmentByTag(TAG_DETAILS)
+        if (details != null) {
+            mainActivity.supportFragmentManager
+                .beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .remove(details)
+                .commitNow()
+            return true
+        }
+        return false
+    }
+
+    private fun clearMaster() {
+        val master = mainActivity.supportFragmentManager.findFragmentByTag(TAG_MASTER)
+        if (master != null) {
+            mainActivity.supportFragmentManager.beginTransaction().remove(master).commitNow()
+        }
     }
 
     companion object {
