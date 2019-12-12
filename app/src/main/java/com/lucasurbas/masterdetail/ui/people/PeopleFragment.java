@@ -4,23 +4,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.data.Person;
+import com.lucasurbas.masterdetail.databinding.FragmentPeopleBinding;
 import com.lucasurbas.masterdetail.injection.people.PeopleModule;
 import com.lucasurbas.masterdetail.ui.main.MainActivity;
 import com.lucasurbas.masterdetail.ui.widget.CustomAppBar;
@@ -29,17 +26,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class PeopleFragment extends Fragment
         implements PeopleContract.View, PersonView.OnPersonClickListener, ActionMode.Callback {
 
-    @BindView(R.id.fragment_people__swipe_refresh) SwipeRefreshLayout swipeRefresh;
-    @BindView(R.id.fragment_people__recycler_view) RecyclerView recyclerView;
-
     @Inject PeopleContract.Presenter presenter;
 
+    private FragmentPeopleBinding binding;
     private PeopleAdapter adapter;
 
     private ActionMode mActionMode;
@@ -54,16 +46,18 @@ public class PeopleFragment extends Fragment
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
+    public View onCreateView(@NonNull android.view.LayoutInflater inflater,
+                             @Nullable android.view.ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_people, container, false);
+        binding = FragmentPeopleBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.bind(this, view);
+
     }
 
     @Override
@@ -79,13 +73,13 @@ public class PeopleFragment extends Fragment
     }
 
     private void setupRecyclerView() {
-        recyclerView.setHasFixedSize(true);
+        binding.recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireActivity());
-        recyclerView.setLayoutManager(layoutManager);
+        binding.recyclerView.setLayoutManager(layoutManager);
         adapter = new PeopleAdapter();
         adapter.setOnPersonClickListener(this);
-        recyclerView.setAdapter(adapter);
+        binding.recyclerView.setAdapter(adapter);
 //        recyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL));
     }
 
@@ -96,7 +90,7 @@ public class PeopleFragment extends Fragment
     }
 
     private void setupSwipeRefresh() {
-        swipeRefresh.setOnRefreshListener(() -> presenter.loadMorePeople());
+        binding.swipeRefresh.setOnRefreshListener(() -> presenter.loadMorePeople());
     }
 
     private void inject() {
@@ -111,11 +105,11 @@ public class PeopleFragment extends Fragment
         super.onDestroyView();
         presenter.detachView();
         //swipeRefreshLayout bug
-        if (swipeRefresh != null) {
-            swipeRefresh.setRefreshing(false);
-            swipeRefresh.destroyDrawingCache();
-            swipeRefresh.clearAnimation();
-        }
+        binding.swipeRefresh.setRefreshing(false);
+        binding.swipeRefresh.destroyDrawingCache();
+        binding.swipeRefresh.clearAnimation();
+
+        binding = null;
     }
 
     @Override
@@ -126,18 +120,18 @@ public class PeopleFragment extends Fragment
 
     @Override
     public void showLoading() {
-        swipeRefresh.setRefreshing(true);
+        binding.swipeRefresh.setRefreshing(true);
     }
 
     @Override
     public void hideLoading() {
-        swipeRefresh.setRefreshing(false);
+        binding.swipeRefresh.setRefreshing(false);
     }
 
     @Override
     public void showPeopleList(List<Person> peopleList) {
         adapter.setPeopleList(peopleList);
-        recyclerView.scrollToPosition(0);
+        binding.recyclerView.scrollToPosition(0);
     }
 
     @Override
@@ -163,7 +157,7 @@ public class PeopleFragment extends Fragment
         inflater.inflate(R.menu.favorites_specific, menu);
         mActionMode = mode;
 
-        swipeRefresh.setEnabled(false);
+        binding.swipeRefresh.setEnabled(false);
         return true;
     }
 
@@ -192,13 +186,13 @@ public class PeopleFragment extends Fragment
     public void onDestroyActionMode(ActionMode mode) {
         Log.d("PeopleFragment", "onDestroyActionMode called");
         presenter.clearSelected();
-        swipeRefresh.setEnabled(true);
+        binding.swipeRefresh.setEnabled(true);
         mActionMode = null;
     }
 
     @Override
     public void startActionMode() {
-        recyclerView.startActionMode(this);
+        binding.recyclerView.startActionMode(this);
     }
 
     @Override
@@ -233,7 +227,7 @@ public class PeopleFragment extends Fragment
         for (int i = 0; i < checkedItemCount; i++) {
             int key = selectedItems.keyAt(i);
             if (selectedItems.get(key, false)) {
-                PersonView view = (PersonView) recyclerView.getLayoutManager()
+                PersonView view = (PersonView) binding.recyclerView.getLayoutManager()
                         .findViewByPosition(key);
                 if (view != null) {
                     view.clearSelection();

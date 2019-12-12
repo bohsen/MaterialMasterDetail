@@ -13,7 +13,6 @@ import javax.inject.Inject
 /**
  * Created by Lucas on 04/01/2017.
  */
-
 class PeoplePresenter @Inject
 constructor(private val context: Context, private val navigator: PeopleContract.Navigator) :
     PeopleContract.Presenter {

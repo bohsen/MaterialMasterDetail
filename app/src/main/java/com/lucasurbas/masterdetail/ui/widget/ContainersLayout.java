@@ -15,15 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.Nullable;
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
+
 import com.lucasurbas.masterdetail.R;
 import com.lucasurbas.masterdetail.ui.main.MainNavigator;
 import com.lucasurbas.masterdetail.ui.util.ViewUtils;
 
-import androidx.annotation.Nullable;
-import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
-import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 import static android.animation.ObjectAnimator.ofFloat;
 
@@ -75,49 +75,49 @@ public class ContainersLayout extends FrameLayout {
 
     private void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_main_containers, this, true);
-        ButterKnife.bind(this);
+
     }
 
     public boolean hasTwoColumns() {
-        return spaceMaster != null && spaceDetails != null;
+        return activity_main__space_master != null && activity_main__space_details != null;
     }
 
     private void singleColumnMaster() {
         if (hasTwoColumns()) {
-            spaceMaster.setVisibility(View.GONE);
-            spaceDetails.setVisibility(View.GONE);
+            activity_main__space_master.setVisibility(View.GONE);
+            activity_main__space_details.setVisibility(View.GONE);
             frameDetails.setVisibility(View.GONE);
         } else {
             animateOutFrameDetails();
         }
-        frameMaster.setVisibility(View.VISIBLE);
+        activity_main__frame_master.setVisibility(View.VISIBLE);
     }
 
     private void singleColumnDetails() {
         if (hasTwoColumns()) {
-            spaceMaster.setVisibility(View.GONE);
-            spaceDetails.setVisibility(View.GONE);
+            activity_main__space_master.setVisibility(View.GONE);
+            activity_main__space_details.setVisibility(View.GONE);
         }
-        frameMaster.setVisibility(View.GONE);
+        activity_main__frame_master.setVisibility(View.GONE);
         frameDetails.setVisibility(View.VISIBLE);
     }
 
     private void twoColumnsEmpty() {
         if (hasTwoColumns()) {
-            spaceMaster.setVisibility(View.VISIBLE);
-            spaceDetails.setVisibility(View.VISIBLE);
+            activity_main__space_master.setVisibility(View.VISIBLE);
+            activity_main__space_details.setVisibility(View.VISIBLE);
             frameDetails.setVisibility(View.VISIBLE);
         } else {
             animateOutFrameDetails();
         }
-        frameMaster.setVisibility(View.VISIBLE);
+        activity_main__frame_master.setVisibility(View.VISIBLE);
     }
 
     private void twoColumnsWithDetails() {
         if (hasTwoColumns()) {
-            spaceMaster.setVisibility(View.VISIBLE);
-            spaceDetails.setVisibility(View.VISIBLE);
-            frameMaster.setVisibility(View.VISIBLE);
+            activity_main__space_master.setVisibility(View.VISIBLE);
+            activity_main__space_details.setVisibility(View.VISIBLE);
+            activity_main__frame_master.setVisibility(View.VISIBLE);
             frameDetails.setVisibility(View.VISIBLE);
         } else {
             animateInFrameDetails();
@@ -140,7 +140,7 @@ public class ContainersLayout extends FrameLayout {
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         super.onAnimationEnd(animation);
-                        frameMaster.setVisibility(View.GONE);
+                        activity_main__frame_master.setVisibility(View.GONE);
                     }
                 });
                 set.start();
